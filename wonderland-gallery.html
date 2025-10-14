@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wonderland Family | CNN 2K25</title>
+    <link rel="icon" type="image/jpeg" href="https://res.cloudinary.com/dfgycmek8/image/upload/v1760275475/favicone_cnn_x9paeu.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Wonderland Gallery Styles */
+        .wonderland-world {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 0;
+        }
+
+        /* Animated background elements */
+        .wonderland-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: floatRandom 20s infinite ease-in-out;
+        }
+
+        @keyframes floatRandom {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -100px) rotate(90deg); }
+            50% { transform: translate(-50px, 150px) rotate(180deg); }
+            75% { transform: translate(150px, 50px) rotate(270deg); }
+        }
+
+        /* Header Section */
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .gallery-title {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(251, 191, 36, 0.3);
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+
+        .gallery-subtitle {
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            font-style: italic;
+        }
+
+        /* Character Sections */
+        .character-realm {
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .realm-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .realm-icon {
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            animation: bounce 2s infinite;
+            opacity: 0.9;
+        }
+
+        .realm-name {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #fbbf24;
+            margin-bottom: 0.3rem;
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .realm-trait {
+            font-size: 1rem;
+            color: #64748b;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        /* Cards Grid */
+        .wonderland-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        @media (min-width: 1200px) {
+            .wonderland-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .wonderland-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Participant Card */
+        .wonderland-card {
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(251, 191, 36, 0.15);
+            backdrop-filter: blur(15px);
+            cursor: pointer;
+            animation: cardAppear 0.8s ease-out;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.8) rotateY(180deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotateY(0);
+            }
+        }
+
+        .wonderland-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(251, 191, 36, 0.3);
+            border-color: rgba(251, 191, 36, 0.4);
+        }
+
+        .wonderland-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .wonderland-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+            filter: grayscale(30%) brightness(0.85);
+        }
+
+        .wonderland-card:hover .card-image {
+            transform: scale(1.1);
+            filter: grayscale(0%) brightness(1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.9) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .card-character-icon {
+            font-size: 2rem;
+            position: absolute;
+            top: 0.8rem;
+            right: 0.8rem;
+            opacity: 0.7;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .wonderland-card:hover .card-character-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 1rem 1.2rem;
+            text-align: center;
+        }
+
+        .card-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fbbf24;
+            margin-bottom: 0.3rem;
+            text-shadow: 0 2px 10px rgba(251, 191, 36, 0.3);
+            letter-spacing: 0.3px;
+        }
+
+        .card-position {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .card-quote {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-style: italic;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+            line-height: 1.4;
+            padding: 0 0.5rem;
+        }
+
+        .wonderland-card:hover .card-quote {
+            opacity: 0.8;
+            transform: translateY(0);
+        }
+
+        /* Loading State */
+        .loading-wonderland {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 8px solid rgba(251, 191, 36, 0.2);
+            border-top-color: #fbbf24;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 2rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 1.5rem;
+            color: #fbbf24;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Empty State */
+        .empty-realm {
+            text-align: center;
+            padding: 3rem;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        /* Stats Counter */
+        .wonderland-stats {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fbbf24;
+            font-family: 'Cinzel', serif;
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Magical Particles */
+        .magic-particle {
+            position: fixed;
+            pointer-events: none;
+            animation: magicFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes magicFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-title {
+                font-size: 2.5rem;
+            }
+            
+            .realm-name {
+                font-size: 1.5rem;
+            }
+            
+            .realm-trait {
+                font-size: 0.85rem;
+            }
+            
+            .wonderland-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 1rem;
+                gap: 1rem;
+            }
+            
+            .card-image-container {
+                height: 180px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .wonderland-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #0f172a;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(251, 191, 36, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">AIESEC Carthage</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="register.html" class="nav-link">Register</a></li>
+                <li><a href="wonderland-gallery.html" class="nav-link active">Our Wonderland</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Animated Background -->
+    <div class="wonderland-bg" id="wonderlandBg"></div>
+
+    <!-- Main Content -->
+    <section class="wonderland-world">
+        <div class="container">
+            <!-- Header -->
+            <div class="gallery-header">
+                <h1 class="gallery-title">Our Wonderland Family</h1>
+                <p class="gallery-subtitle">"We're all mad here, but together we create magic"</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="wonderland-stats" id="wonderlandStats">
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalCount">0</div>
+                        <div class="stat-label">Wonderlanders</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="charactersCount">0</div>
+                        <div class="stat-label">Characters</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-wonderland" id="loadingState">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Opening the portal to Wonderland...</p>
+            </div>
+
+            <!-- Character Realms Container -->
+            <div id="wonderlandRealms"></div>
+        </div>
+    </section>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">
+        ↑
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AIESEC Carthage</h3>
+                    <p>Empowering young people to develop their leadership potential through international experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="wonderland-gallery.html">Our Wonderland</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/cnn_2k25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/g/1ASiyxsszF/" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 58 335 702</p>
+                        <p><i class="fas fa-phone"></i> 52 960 205</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AIESEC Carthage - CNN 2K25. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="wonderland-gallery.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Enter the Wonderland | CNN 2K25</title>
+    <link rel="icon" type="image/jpeg" href="https://res.cloudinary.com/dfgycmek8/image/upload/v1760275475/favicone_cnn_x9paeu.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">AIESEC Carthage</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="register.html" class="nav-link active">Register</a></li>
+                <li><a href="wonderland-gallery.html" class="nav-link">Our Wonderland</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero register-hero" style="
+        background-image: url('https://res.cloudinary.com/dfgycmek8/image/upload/v1760228214/cover_2_vqqctp.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    ">
+        <!-- Overlay flou -->
+        <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            z-index: 1;
+        "></div>
+        
+        <div class="floating-elements" style="z-index: 2; position: relative;">
+            <div class="floating-card card-1">♠</div>
+            <div class="floating-card card-2">♥</div>
+            <div class="floating-card card-3">♦</div>
+            <div class="floating-card card-4">♣</div>
+            <div class="key">🔑</div>
+            <div class="clock">🕰️</div>
+            <div class="teacup">☕</div>
+            <div class="character-hero character-1">🎩</div>
+            <div class="character-hero character-2">🐰</div>
+            <div class="character-hero character-3">😸</div>
+        </div>
+        <div class="hero-content" style="z-index: 2; position: relative;">
+            <h1 class="page-title fade-in" style="font-size: 4rem; margin-bottom: 1.5rem;">Join the Wonderland</h1>
+            <p class="page-subtitle fade-in-delay" style="font-size: 1.8rem; margin-bottom: 3rem;">Register for CNN 2K25</p>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div style="
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            text-align: center;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        " onclick="document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' })">
+            <p style="
+                color: #fbbf24;
+                font-size: 1rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            ">Scroll to begin</p>
+            <div style="
+                font-size: 2.5rem;
+                color: #fbbf24;
+                text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            ">↓</div>
+        </div>
+    </section>
+    
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+    </style>
+
+    <!-- Registration Form Section -->
+    <section class="form-section section">
+        <!-- Wonderland Decorative Elements -->
+        <div class="wonderland-decorations">
+            <div class="decoration-left decoration-1">
+                <div class="character-float">🎩</div>
+                <div class="sparkle">✨</div>
+            </div>
+            <div class="decoration-right decoration-2">
+                <div class="character-float">🐰</div>
+                <div class="sparkle">💫</div>
+            </div>
+            <div class="decoration-left decoration-3">
+                <div class="character-float">😸</div>
+                <div class="flower">🌺</div>
+            </div>
+            <div class="decoration-right decoration-4">
+                <div class="character-float">👑</div>
+                <div class="sparkle">⭐</div>
+            </div>
+            <div class="decoration-left decoration-5">
+                <div class="character-float">🃏</div>
+                <div class="rose">🌹</div>
+            </div>
+            <div class="decoration-right decoration-6">
+                <div class="character-float">🎭</div>
+                <div class="sparkle">✨</div>
+            </div>
+            <div class="decoration-left decoration-7">
+                <div class="character-float">🦋</div>
+                <div class="mushroom">🍄</div>
+            </div>
+            <div class="decoration-right decoration-8">
+                <div class="character-float">🫖</div>
+                <div class="sparkle">💎</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-container fade-on-scroll">
+                <div class="form-intro">
+                    <h2>Your Adventure Begins Here</h2>
+                    <p>Fill in your details below and take the first step down the rabbit hole.</p>
+                    <div class="price-banner">
+                        <div class="price-icon">🎫</div>
+                        <div class="price-details">
+                            <h3>Conference Fee</h3>
+                            <p class="price-amount">140 Dinars</p>
+                            <p class="price-note">For the entire conference experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="registrationForm" class="registration-form">
+                    <!-- Section 1: Personal Information -->
+                    <div class="form-section-header">
+                        <h3>① 👤 Personal Information</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName" 
+                            placeholder="Enter your full name" 
+                            required
+                        >
+                        <span class="form-icon">👤</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aiesecPosition">AIESEC Position <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="aiesecPosition" 
+                            name="aiesecPosition" 
+                            placeholder="Enter your position (e.g., VP, TL, Member)" 
+                            required
+                        >
+                        <span class="form-icon">🎭</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cin">Numéro CIN <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="cin" 
+                            name="cin" 
+                            placeholder="Enter your CIN number (e.g., 12345678)" 
+                            required
+                            pattern="[0-9]{8}"
+                            title="Please enter an 8-digit CIN number"
+                        >
+                        <span class="form-icon">🆔</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="university">University <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="university" 
+                            name="university" 
+                            placeholder="Enter your university name" 
+                            required
+                        >
+                        <span class="form-icon">🎓</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="your.email@example.com" 
+                            required
+                        >
+                        <span class="form-icon">📧</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="+216 XX XXX XXX" 
+                            required
+                        >
+                        <span class="form-icon">📱</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emergencyPhone">Emergency Phone Number <span class="required">*</span></label>
+                        <input 
+                            type="tel" 
+                            id="emergencyPhone" 
+                            name="emergencyPhone" 
+                            placeholder="+216 XX XXX XXX" 
+                            required
+                        >
+                        <span class="form-icon">🚨</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gender <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="male" required>
+                                <span class="radio-custom"></span>
+                                <span>Male</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="female" required>
+                                <span class="radio-custom"></span>
+                                <span>Female</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="other" required>
+                                <span class="radio-custom"></span>
+                                <span>Other</span>
+                            </label>
+                        </div>
+                        <div id="genderOtherField" class="conditional-field" style="display: none;">
+                            <input 
+                                type="text" 
+                                name="genderOther" 
+                                placeholder="Please specify..."
+                                class="conditional-input"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date of Birth <span class="required">*</span></label>
+                        <input 
+                            type="date" 
+                            id="dateOfBirth" 
+                            name="dateOfBirth" 
+                            placeholder="mm/dd/yyyy" 
+                            required
+                        >
+                        <span class="form-icon">📅</span>
+                    </div>
+
+                    <!-- Section 2: Health & Dietary -->
+                    <div class="form-section-header">
+                        <h3>② 🍏 Health & Dietary</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Do you have any allergies? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="allergies" value="yes" required>
+                                <span class="radio-custom"></span>
+                                <span>Yes</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="allergies" value="no" required>
+                                <span class="radio-custom"></span>
+                                <span>No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Chronic medical conditions we should be aware of?</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="medicalConditions" value="yes">
+                                <span class="radio-custom"></span>
+                                <span>Yes</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="medicalConditions" value="no">
+                                <span class="radio-custom"></span>
+                                <span>No</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="medicalConditions" value="other">
+                                <span class="radio-custom"></span>
+                                <span>Other</span>
+                            </label>
+                        </div>
+                        <div id="medicalConditionsOtherField" class="conditional-field" style="display: none;">
+                            <textarea 
+                                name="medicalConditionsOther" 
+                                placeholder="Please specify medical conditions..."
+                                class="conditional-input"
+                                rows="3"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Wonderland Character -->
+                    <div class="form-section-header">
+                        <h3>③ 🎭 Your Wonderland Identity</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Which Alice in Wonderland character do you relate to most? <span class="required">*</span></label>
+                        <div class="character-grid">
+                            <label class="character-card">
+                                <input type="radio" name="wonderlandCharacter" value="Alice" required>
+                                <div class="character-content">
+                                    <div class="character-icon">👧</div>
+                                    <div class="character-name">Alice</div>
+                                    <div class="character-trait">Curious & Brave</div>
+                                </div>
+                            </label>
+                            
+                            <label class="character-card">
+                                <input type="radio" name="wonderlandCharacter" value="Mad Hatter" required>
+                                <div class="character-content">
+                                    <div class="character-icon">🎩</div>
+                                    <div class="character-name">Mad Hatter</div>
+                                    <div class="character-trait">Creative & Eccentric</div>
+                                </div>
+                            </label>
+                            
+                            <label class="character-card">
+                                <input type="radio" name="wonderlandCharacter" value="Cheshire Cat" required>
+                                <div class="character-content">
+                                    <div class="character-icon">😸</div>
+                                    <div class="character-name">Cheshire Cat</div>
+                                    <div class="character-trait">Mysterious & Wise</div>
+                                </div>
+                            </label>
+                            
+                            <label class="character-card">
+                                <input type="radio" name="wonderlandCharacter" value="White Rabbit" required>
+                                <div class="character-content">
+                                    <div class="character-icon">🐰</div>
+                                    <div class="character-name">White Rabbit</div>
+                                    <div class="character-trait">Organized & Punctual</div>
+                                </div>
+                            </label>
+                            
+                            <label class="character-card">
+                                <input type="radio" name="wonderlandCharacter" value="Queen of Hearts" required>
+                                <div class="character-content">
+                                    <div class="character-icon">👑</div>
+                                    <div class="character-name">Queen of Hearts</div>
+                                    <div class="character-trait">Bold & Leader</div>
+                                </div>
+                            </label>
+                            
+                            <label class="character-card">
+                                <input type="radio" name="wonderlandCharacter" value="Caterpillar" required>
+                                <div class="character-content">
+                                    <div class="character-icon">🐛</div>
+                                    <div class="character-name">Caterpillar</div>
+                                    <div class="character-trait">Thoughtful & Philosophical</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Conference Expectations -->
+                    <div class="form-section-header">
+                        <h3>④ 🎯 Conference Expectations</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mainGoals">What are your main goals for attending the conference? <span class="required">*</span></label>
+                        <textarea 
+                            id="mainGoals" 
+                            name="mainGoals" 
+                            rows="4" 
+                            placeholder="Share your goals and expectations..."
+                            required
+                        ></textarea>
+                        <span class="form-icon textarea-icon">🎯</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interestedTopics">Which topics or sessions interest you most? <span class="required">*</span></label>
+                        <textarea 
+                            id="interestedTopics" 
+                            name="interestedTopics" 
+                            rows="4" 
+                            placeholder="Tell us about the topics that excite you..."
+                            required
+                        ></textarea>
+                        <span class="form-icon textarea-icon">💡</span>
+                    </div>
+
+                    <!-- Section 5: Collaboration & Support -->
+                    <div class="form-section-header">
+                        <h3>⑤ 🤝 Collaboration & Support</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="teamSupport">How can our team support you during the event?</label>
+                        <textarea 
+                            id="teamSupport" 
+                            name="teamSupport" 
+                            rows="3" 
+                            placeholder="Let us know how we can help make your experience better..."
+                        ></textarea>
+                        <span class="form-icon textarea-icon">🤝</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Communication Method <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="communicationMethod" value="email" required>
+                                <span class="radio-custom"></span>
+                                <span>Email</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="communicationMethod" value="whatsapp" required>
+                                <span class="radio-custom"></span>
+                                <span>WhatsApp</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="communicationMethod" value="other" required>
+                                <span class="radio-custom"></span>
+                                <span>Other</span>
+                            </label>
+                        </div>
+                        <div id="communicationMethodOtherField" class="conditional-field" style="display: none;">
+                            <input 
+                                type="text" 
+                                name="communicationMethodOther" 
+                                placeholder="Please specify preferred method..."
+                                class="conditional-input"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photoUpload">Upload a photo of yourself</label>
+                        <input 
+                            type="file" 
+                            id="photoUpload" 
+                            name="photoUpload" 
+                            accept="image/jpeg,image/png,image/gif"
+                        >
+                        <small class="form-helper">Format: JPG, PNG, GIF (max 50MB)</small>
+                        <span class="form-icon">📸</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="finalComments">Any final comments or special requests?</label>
+                        <textarea 
+                            id="finalComments" 
+                            name="finalComments" 
+                            rows="3" 
+                            placeholder="Share any additional thoughts or special requests..."
+                        ></textarea>
+                        <span class="form-icon textarea-icon">💬</span>
+                    </div>
+
+                    <!-- Section 6: Conference Fees & Room -->
+                    <div class="form-section-header">
+                        <h3>⑥ 💳 Conference Fees & Room</h3>
+                    </div>
+
+                    <div class="form-info-box">
+                        <p><strong>🎫 The participation fee is 140 dinars for the entire conference.</strong></p>
+                        <p>This includes all conference activities, sessions, and shared accommodation.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Would you like to upgrade to a single room? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="singleRoom" value="no" required>
+                                <span class="radio-custom"></span>
+                                <span>No (Shared accommodation included)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="singleRoom" value="yes" required>
+                                <span class="radio-custom"></span>
+                                <span>Yes (+50 dinars per day = 100 dinars total)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Section 7: Terms & Conditions -->
+                    <div class="form-section-header">
+                        <h3>⑦ 📄 Terms & Conditions</h3>
+                    </div>
+
+                    <div class="terms-box">
+                        <ul>
+                            <li>🎫 I understand the total conference fee is <strong>140 dinars</strong> for the entire conference.</li>
+                            <li>🏨 I acknowledge that shared accommodation is included in the base fee.</li>
+                            <li>💰 I agree to pay an additional <strong>100 dinars (50 dinars per day)</strong> if I choose a single room upgrade.</li>
+                            <li>❌ I accept the 100% cancellation fee if I cancel my registration.</li>
+                            <li>📋 I confirm all provided information is accurate and complete.</li>
+                            <li>⚠️ I understand that no refunds will be issued for no-shows or late cancellations.</li>
+                            <li>✨ I agree to follow all conference rules and embrace the Wonderland spirit!</li>
+                        </ul>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">
+                                I fully agree to the terms and conditions outlined above. <span class="required">*</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        <span>Enter the Wonderland</span>
+                        <span class="arrow">→</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">🎉</div>
+            <h2>Welcome to Wonderland!</h2>
+            <p>Your registration has been successfully submitted.</p>
+            <p class="modal-message">Get ready for an unforgettable adventure at CNN 2K25!</p>
+            <button class="modal-button" onclick="closeModal()">
+                <span>Explore More</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AIESEC Carthage</h3>
+                    <p>Empowering young people to develop their leadership potential through international experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/cnn_2k25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/g/1ASiyxsszF/" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 58 335 702</p>
+                        <p><i class="fas fa-phone"></i> 52 960 205</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AIESEC Carthage - CNN 2K25. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
