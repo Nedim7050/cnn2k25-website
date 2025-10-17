@@ -643,6 +643,51 @@
     </footer>
 
     <script>
+        // Conditional Fields Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle gender "other" field
+            const genderRadios = document.querySelectorAll('input[name="gender"]');
+            const genderOtherField = document.getElementById('genderOtherField');
+            
+            genderRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.value === 'other') {
+                        genderOtherField.style.display = 'block';
+                    } else {
+                        genderOtherField.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Handle medical conditions "other" field
+            const medicalRadios = document.querySelectorAll('input[name="medicalConditions"]');
+            const medicalOtherField = document.getElementById('medicalConditionsOtherField');
+            
+            medicalRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.value === 'other') {
+                        medicalOtherField.style.display = 'block';
+                    } else {
+                        medicalOtherField.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Handle communication method "other" field
+            const communicationRadios = document.querySelectorAll('input[name="communicationMethod"]');
+            const communicationOtherField = document.getElementById('communicationMethodOtherField');
+            
+            communicationRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.value === 'other') {
+                        communicationOtherField.style.display = 'block';
+                    } else {
+                        communicationOtherField.style.display = 'none';
+                    }
+                });
+            });
+        });
+
         // Digital Signature Functionality
         document.addEventListener('DOMContentLoaded', function() {
             const canvas = document.getElementById('signatureCanvas');
@@ -744,7 +789,7 @@
     <script src="script.js"></script>
 
     <style>
-        /* Signature Section */
+        /* Signature Section - FIXED MOBILE LAYOUT */
         .signature-section {
             background: linear-gradient(135deg, #1e293b, #334155);
             border: 2px solid #fbbf24;
@@ -752,6 +797,8 @@
             padding: 2rem;
             margin: 2rem 0;
             text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .signature-container {
@@ -759,16 +806,50 @@
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+            width: 100%;
+            max-width: 100%;
         }
 
         #signatureCanvas {
             background: #ffffff;
             border-radius: 8px;
+            max-width: 100%;
+            width: 100%;
         }
 
         .signature-controls {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        /* Mobile signature fixes */
+        @media (max-width: 768px) {
+            .signature-section {
+                padding: 1rem !important;
+                margin: 1rem 0 !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            
+            #signatureCanvas {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 120px !important;
+            }
+            
+            .signature-controls {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+                width: 100% !important;
+            }
+            
+            .clear-signature-btn,
+            .save-signature-btn {
+                width: 100% !important;
+                padding: 0.8rem !important;
+            }
         }
 
         .clear-signature-btn,

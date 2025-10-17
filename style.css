@@ -2464,6 +2464,53 @@ cite {
     gap: 2rem;
 }
 
+/* FIXED: Values grid mobile layout - 3 columns horizontal */
+@media (max-width: 768px) {
+    .values-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1rem !important;
+    }
+    
+    .value-card {
+        padding: 1rem !important;
+    }
+    
+    .value-number {
+        font-size: 2rem !important;
+    }
+    
+    .value-card h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    .value-card p {
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.8rem !important;
+    }
+    
+    .value-card {
+        padding: 0.8rem !important;
+    }
+    
+    .value-number {
+        font-size: 1.8rem !important;
+    }
+    
+    .value-card h3 {
+        font-size: 1rem !important;
+    }
+    
+    .value-card p {
+        font-size: 0.8rem !important;
+    }
+}
+
 .value-card {
     background: var(--card-dark);
     padding: 2rem;
@@ -2519,11 +2566,19 @@ cite {
     height: 100%;
     background-image: url('https://res.cloudinary.com/dfgycmek8/image/upload/v1760229390/lapin_alice_nz7pxf.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center !important; /* FIXED: Center background image */
     background-repeat: no-repeat;
     background-attachment: fixed;
     filter: blur(3px);
     z-index: 1;
+}
+
+/* FIXED: Quote section mobile centering */
+@media (max-width: 768px) {
+    .quote-section::before {
+        background-position: center center !important;
+        background-attachment: scroll !important; /* Better mobile performance */
+    }
 }
 
 .quote-section::after {
@@ -3955,7 +4010,7 @@ cite {
         opacity: 0.5;
     }
     
-    /* Wonderland Portal Mobile */
+    /* Wonderland Portal Mobile - FIXED POSITIONING */
     .cheshire-cat {
         font-size: 4rem;
         top: 3%;
@@ -3984,6 +4039,33 @@ cite {
         font-size: 3rem;
         bottom: 15%;
         left: 5%;
+    }
+    
+    /* FIXED: Wonderland decorations overlapping form elements */
+    .wonderland-decorations {
+        display: none !important; /* Hide decorative elements on mobile to prevent overlap */
+    }
+    
+    /* FIXED: Background image centering for mobile */
+    .hero.wonderland-hero::before {
+        background-position: center center !important;
+        background-size: cover !important;
+        transform: scale(1) !important; /* Remove scale to prevent right shift */
+    }
+    
+    /* FIXED: About section visual circle positioning */
+    .visual-circle {
+        width: 200px !important;
+        height: 200px !important;
+        margin: 1rem auto !important;
+    }
+    
+    .circle-icon {
+        font-size: 3rem !important;
+    }
+    
+    .circle-content p {
+        font-size: 1rem !important;
     }
     
     .mushroom-1 {
@@ -4093,9 +4175,10 @@ cite {
    Enhanced Mobile Form & Navigation
    =========================================== */
 @media (max-width: 768px) {
-    /* Navigation Mobile Enhancements */
+    /* Navigation Mobile Enhancements - FIXED Z-INDEX */
     .navbar {
         padding: 0.8rem 0;
+        z-index: 10000 !important; /* Ensure navbar stays on top */
     }
     
     .logo-text {
@@ -4115,7 +4198,7 @@ cite {
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        z-index: 1000;
+        z-index: 10001 !important; /* Higher than navbar */
     }
     
     .nav-menu.active {
@@ -4135,6 +4218,7 @@ cite {
         display: flex;
         flex-direction: column;
         gap: 4px;
+        z-index: 10002 !important; /* Highest z-index for hamburger */
     }
     
     .hamburger span {
