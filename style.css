@@ -4058,12 +4058,25 @@ cite {
         z-index: 10 !important;
     }
     
-    /* FIXED: Background image centering for mobile */
+    /* FIXED: Background image centering for mobile - PERFECTED */
     .hero.wonderland-hero::before {
         background-position: center center !important;
         background-size: cover !important;
-        transform: scale(1) !important; /* Remove scale to prevent right shift */
+        background-attachment: scroll !important; /* Better mobile performance */
+        transform: none !important; /* Remove any transforms */
         filter: blur(2px) !important; /* Keep light blur on mobile */
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    /* Additional mobile hero fixes */
+    .hero.wonderland-hero {
+        background-position: center center !important;
+        background-size: cover !important;
+        background-attachment: scroll !important;
+        overflow: hidden !important;
     }
     
     /* FIXED: About section visual circle positioning */
@@ -4204,7 +4217,7 @@ cite {
    Enhanced Mobile Form & Navigation
    =========================================== */
 @media (max-width: 768px) {
-    /* Navigation Mobile Enhancements - FIXED Z-INDEX */
+    /* Navigation Mobile Enhancements - PERFECTED Z-INDEX */
     .navbar {
         padding: 0.8rem 0;
         z-index: 10000 !important; /* Ensure navbar stays on top */
@@ -4213,6 +4226,71 @@ cite {
         left: 0 !important;
         right: 0 !important;
         width: 100% !important;
+        background: rgba(15, 23, 42, 0.98) !important;
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+    }
+    
+    .nav-menu {
+        position: fixed !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: rgba(15, 23, 42, 0.98) !important;
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        flex-direction: column !important;
+        padding: 2rem 0 !important;
+        transform: translateY(-100%) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: all 0.3s ease !important;
+        z-index: 10001 !important; /* Higher than navbar */
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    .nav-link {
+        padding: 1rem 2rem !important;
+        border-bottom: 1px solid rgba(251, 191, 36, 0.1) !important;
+        font-size: 1rem !important;
+        text-align: center !important;
+        display: block !important;
+        color: #fbbf24 !important;
+        text-decoration: none !important;
+    }
+    
+    .hamburger {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+        z-index: 10002 !important; /* Highest z-index for hamburger */
+        cursor: pointer !important;
+        padding: 0.5rem !important;
+    }
+    
+    .hamburger span {
+        width: 25px !important;
+        height: 3px !important;
+        background: var(--gold) !important;
+        transition: all 0.3s ease !important;
+        display: block !important;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px) !important;
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0 !important;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px) !important;
     }
     
     .logo-text {

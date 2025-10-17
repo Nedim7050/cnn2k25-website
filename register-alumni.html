@@ -542,7 +542,7 @@
         </div>
     </footer>
 
-    <script>
+
         // ===========================================
         // Alumni Form Submission Script
         // Gestion complète du formulaire alumni
@@ -1392,6 +1392,199 @@
         .form-info-box strong {
             color: #fbbf24;
         }
+
+        /* PERFECT MOBILE FORM LAYOUT */
+        @media (max-width: 768px) {
+            /* Force proper form container layout */
+            .form-section {
+                padding: 1rem 0 !important;
+                margin: 0 !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                position: relative !important;
+                z-index: 10 !important;
+            }
+            
+            .form-container {
+                margin: 0.5rem auto !important;
+                padding: 1rem !important;
+                max-width: 100% !important;
+                width: 95% !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                box-sizing: border-box !important;
+                position: relative !important;
+                z-index: 10 !important;
+            }
+            
+            /* Form intro mobile optimization */
+            .form-intro {
+                text-align: center !important;
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .form-intro h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .form-intro p {
+                font-size: 0.9rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            /* Event details box mobile */
+            .event-details-box {
+                flex-direction: column !important;
+                text-align: center !important;
+                padding: 1rem !important;
+                margin: 1rem 0 !important;
+            }
+            
+            .event-icon {
+                font-size: 2rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            /* Price banner mobile */
+            .price-banner {
+                flex-direction: column !important;
+                text-align: center !important;
+                padding: 1rem !important;
+                margin: 1rem 0 !important;
+            }
+            
+            .price-icon {
+                font-size: 2rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            /* Form sections mobile */
+            .form-section-header {
+                margin: 1.5rem 0 1rem 0 !important;
+                padding: 0.8rem !important;
+                text-align: center !important;
+            }
+            
+            .form-section-header h3 {
+                font-size: 1.1rem !important;
+                margin: 0 !important;
+            }
+            
+            /* Form groups mobile */
+            .form-group {
+                margin-bottom: 1rem !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            
+            .form-group label {
+                font-size: 0.9rem !important;
+                margin-bottom: 0.5rem !important;
+                display: block !important;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                width: 100% !important;
+                padding: 0.8rem !important;
+                font-size: 1rem !important;
+                border-radius: 8px !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Radio groups mobile */
+            .radio-group {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0.8rem !important;
+                margin-top: 0.5rem !important;
+            }
+            
+            .radio-label {
+                padding: 0.8rem !important;
+                border-radius: 8px !important;
+                background: rgba(15, 23, 42, 0.6) !important;
+                border: 1px solid rgba(251, 191, 36, 0.3) !important;
+            }
+            
+            /* Character grid mobile - PERFECTED */
+            .alumni-character-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.8rem !important;
+                margin: 1rem 0 !important;
+                padding: 0.5rem !important;
+            }
+            
+            .alumni-character-card {
+                padding: 1rem !important;
+                border-radius: 12px !important;
+                text-align: center !important;
+            }
+            
+            .alumni-character-card .character-icon {
+                font-size: 2rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .alumni-character-card .character-name {
+                font-size: 0.9rem !important;
+                margin-bottom: 0.3rem !important;
+            }
+            
+            .alumni-character-card .character-trait {
+                font-size: 0.8rem !important;
+            }
+            
+            /* Terms box mobile */
+            .terms-box {
+                padding: 1rem !important;
+                margin: 1rem 0 !important;
+            }
+            
+            .terms-box ul {
+                padding-left: 0 !important;
+            }
+            
+            .terms-box ul li {
+                font-size: 0.85rem !important;
+                margin-bottom: 0.8rem !important;
+                padding-left: 1.5rem !important;
+            }
+            
+            /* Checkbox mobile */
+            .checkbox-group {
+                margin: 1rem 0 !important;
+            }
+            
+            .checkbox-label {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 0.8rem !important;
+                padding: 1rem !important;
+                background: rgba(15, 23, 42, 0.6) !important;
+                border-radius: 8px !important;
+            }
+            
+            .checkbox-custom {
+                width: 40px !important;
+                height: 40px !important;
+            }
+            
+            /* Submit button mobile */
+            .submit-button {
+                width: 100% !important;
+                padding: 1rem !important;
+                font-size: 1.1rem !important;
+                margin-top: 2rem !important;
+                border-radius: 10px !important;
+            }
+        }
     </style>
+    
+    <script src="script.js"></script>
 </body>
 </html>
