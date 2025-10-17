@@ -22,6 +22,7 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="register.html" class="nav-link active">Register</a></li>
+                <li><a href="register-alumni.html" class="nav-link">Register as Alumni</a></li>
                 <li><a href="wonderland-gallery.html" class="nav-link">Our Wonderland</a></li>
             </ul>
             <div class="hamburger">
@@ -564,6 +565,23 @@
                         </label>
                     </div>
 
+                    <!-- Section 8: Digital Signature -->
+                    <div class="form-section-header">
+                        <h3>⑧ ✍️ Digital Signature</h3>
+                    </div>
+
+                    <div class="signature-section">
+                        <div class="signature-container">
+                            <canvas id="signatureCanvas" width="400" height="150" style="border: 2px dashed #ccc; border-radius: 8px; cursor: crosshair;"></canvas>
+                            <div class="signature-controls">
+                                <button type="button" id="clearSignature" class="clear-signature-btn">Clear Signature</button>
+                                <button type="button" id="saveSignature" class="save-signature-btn">Save Signature</button>
+                            </div>
+                            <input type="hidden" id="signatureData" name="signatureData" required>
+                        </div>
+                        <p class="signature-note">Please sign above to confirm your registration</p>
+                    </div>
+
                     <button type="submit" class="submit-button">
                         <span>Enter the Wonderland</span>
                         <span class="arrow">→</span>
@@ -624,7 +642,172 @@
         </div>
     </footer>
 
+    <script>
+        // Digital Signature Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('signatureCanvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            const signatureDataInput = document.getElementById('signatureData');
+            const clearBtn = document.getElementById('clearSignature');
+            const saveBtn = document.getElementById('saveSignature');
+            
+            let isDrawing = false;
+            let hasSignature = false;
+
+            // Set canvas style
+            ctx.strokeStyle = '#1e293b';
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            // Mouse events
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mouseout', stopDrawing);
+
+            // Touch events for mobile
+            canvas.addEventListener('touchstart', handleTouch);
+            canvas.addEventListener('touchmove', handleTouch);
+            canvas.addEventListener('touchend', stopDrawing);
+
+            function startDrawing(e) {
+                isDrawing = true;
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+            }
+
+            function draw(e) {
+                if (!isDrawing) return;
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                hasSignature = true;
+            }
+
+            function stopDrawing() {
+                isDrawing = false;
+                ctx.beginPath();
+            }
+
+            function handleTouch(e) {
+                e.preventDefault();
+                const touch = e.touches[0];
+                const mouseEvent = new MouseEvent(e.type === 'touchstart' ? 'mousedown' : 
+                                                e.type === 'touchmove' ? 'mousemove' : 'mouseup', {
+                    clientX: touch.clientX,
+                    clientY: touch.clientY
+                });
+                canvas.dispatchEvent(mouseEvent);
+            }
+
+            if (clearBtn) {
+                clearBtn.addEventListener('click', function() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    signatureDataInput.value = '';
+                    hasSignature = false;
+                });
+            }
+
+            if (saveBtn) {
+                saveBtn.addEventListener('click', function() {
+                    if (hasSignature) {
+                        const signatureData = canvas.toDataURL();
+                        signatureDataInput.value = signatureData;
+                        alert('Signature saved successfully!');
+                    } else {
+                        alert('Please draw your signature first.');
+                    }
+                });
+            }
+
+            // Store signature state globally for form validation
+            window.regularHasSignature = function() {
+                return hasSignature;
+            };
+            
+            window.regularSaveSignature = function() {
+                if (hasSignature && !signatureDataInput.value) {
+                    const signatureData = canvas.toDataURL();
+                    signatureDataInput.value = signatureData;
+                }
+            };
+        });
+    </script>
     <script src="script.js"></script>
+
+    <style>
+        /* Signature Section */
+        .signature-section {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            border: 2px solid #fbbf24;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .signature-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #signatureCanvas {
+            background: #ffffff;
+            border-radius: 8px;
+        }
+
+        .signature-controls {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .clear-signature-btn,
+        .save-signature-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .clear-signature-btn {
+            background: #ef4444;
+            color: white;
+        }
+
+        .clear-signature-btn:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        .save-signature-btn {
+            background: #22c55e;
+            color: white;
+        }
+
+        .save-signature-btn:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+        }
+
+        .signature-note {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+    </style>
 </body>
 </html>
 

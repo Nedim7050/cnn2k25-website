@@ -4,7 +4,7 @@
 // ===========================================
 
 // ===========================================
-// Mobile Navigation Toggle
+// Mobile Navigation Toggle & Visibility Force
 // ===========================================
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -38,6 +38,71 @@ if (hamburger) {
         });
     });
 }
+
+// Force mobile visibility function
+function forceMobileVisibility() {
+    // Check if we're on mobile
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        console.log('📱 Mobile detected - forcing visibility');
+        
+        // Force form visibility
+        const formSection = document.querySelector('.form-section');
+        if (formSection) {
+            formSection.style.display = 'block';
+            formSection.style.visibility = 'visible';
+            formSection.style.opacity = '1';
+            
+            // Force all form children visibility
+            const formElements = formSection.querySelectorAll('*');
+            formElements.forEach(element => {
+                element.style.visibility = 'visible';
+                element.style.opacity = '1';
+                if (element.classList.contains('character-grid') || element.classList.contains('alumni-character-grid')) {
+                    element.style.display = 'grid';
+                } else if (element.classList.contains('signature-buttons')) {
+                    element.style.display = 'flex';
+                } else if (element.tagName !== 'IMG') {
+                    element.style.display = 'block';
+                }
+            });
+        }
+        
+        // Force gallery visibility
+        const wonderlandWorld = document.querySelector('.wonderland-world');
+        if (wonderlandWorld) {
+            wonderlandWorld.style.display = 'block';
+            wonderlandWorld.style.visibility = 'visible';
+            wonderlandWorld.style.opacity = '1';
+            
+            // Force all gallery children visibility
+            const galleryElements = wonderlandWorld.querySelectorAll('*');
+            galleryElements.forEach(element => {
+                element.style.visibility = 'visible';
+                element.style.opacity = '1';
+                if (element.classList.contains('wonderland-grid')) {
+                    element.style.display = 'grid';
+                } else if (element.classList.contains('stats-container') || element.classList.contains('signature-buttons')) {
+                    element.style.display = 'flex';
+                } else {
+                    element.style.display = 'block';
+                }
+            });
+        }
+        
+        console.log('✅ Mobile visibility forced');
+    }
+}
+
+// Initialize mobile visibility on load and resize
+document.addEventListener('DOMContentLoaded', function() {
+    forceMobileVisibility();
+});
+
+window.addEventListener('resize', function() {
+    forceMobileVisibility();
+});
 
 // ===========================================
 // Smooth Scroll Animation
@@ -120,8 +185,8 @@ floatingElements.forEach((element, index) => {
 const registrationForm = document.getElementById('registrationForm');
 const successModal = document.getElementById('successModal');
 
-// ⚠️ IMPORTANT : Remplacez cette URL par votre URL Apps Script
-const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzDfqRDBmb10cdxvFgKvnnuVQ1bcdGG3d-Rbzb--Smm0BMDP3SMHqdRBmF1NvYtRv8/exec';
+        // ⚠️ IMPORTANT : URL Apps Script mise à jour
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx2EOI6LM1r5oJYFdqRvHd-Sf4YgIHULfE0uc_45OOD4IPIRFgZ9k10HWDhvwXSi-bP/exec';
 
 if (registrationForm) {
     registrationForm.addEventListener('submit', async (e) => {
@@ -155,6 +220,21 @@ if (registrationForm) {
                 await sleep(500);
             }
             
+            // Vérifier la signature digitale
+            if (window.regularHasSignature && !window.regularHasSignature()) {
+                hideLoadingOverlay();
+                alert('⚠️ Please provide your digital signature before submitting.');
+                submitButton.disabled = false;
+                return;
+            }
+            
+            // Sauvegarder la signature si nécessaire
+            if (window.regularSaveSignature) {
+                window.regularSaveSignature();
+            }
+            
+            const signatureData = document.getElementById('signatureData')?.value || '';
+            
             // Récupérer toutes les valeurs du formulaire
             const formData = {
                 fullName: document.getElementById('fullName').value,
@@ -180,7 +260,10 @@ if (registrationForm) {
                 photoName: photoName,  // Nom du fichier
                 finalComments: document.getElementById('finalComments')?.value || '',
                 singleRoom: document.querySelector('input[name="singleRoom"]:checked')?.value || '',
-                terms: document.getElementById('terms').checked
+                signatureData: signatureData,  // Signature digitale
+                terms: document.getElementById('terms').checked,
+                formType: 'regular',
+                isAlumni: false
             };
             
             // Valider les termes et conditions

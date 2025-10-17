@@ -4089,3 +4089,485 @@ cite {
     }
 }
 
+/* ===========================================
+   Enhanced Mobile Form & Navigation
+   =========================================== */
+@media (max-width: 768px) {
+    /* Navigation Mobile Enhancements */
+    .navbar {
+        padding: 0.8rem 0;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        padding: 2rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-link {
+        padding: 1rem 2rem;
+        border-bottom: 1px solid rgba(251, 191, 36, 0.1);
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--gold);
+        transition: all 0.3s ease;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* Page Hero Mobile */
+    .page-hero {
+        padding: 2rem 0 !important;
+        min-height: 80vh !important;
+    }
+    
+    .page-title {
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem !important;
+        text-align: center;
+    }
+    
+    .page-subtitle {
+        font-size: 1.3rem !important;
+        margin-bottom: 2rem !important;
+        text-align: center;
+    }
+    
+    /* Form Section Mobile - FIXED LAYOUT */
+    .form-section {
+        padding: 1rem 0 !important;
+        margin-top: 0 !important;
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .form-container {
+        margin: 0.5rem auto !important;
+        padding: 1rem !important;
+        max-width: 100% !important;
+        width: 95% !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+    
+    .form-section-header {
+        margin-bottom: 1rem !important;
+        padding: 0.5rem !important;
+        display: block !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+    
+    .form-section-header h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.5rem !important;
+        text-align: center !important;
+        display: block !important;
+        color: var(--gold) !important;
+        position: relative !important;
+        z-index: 3 !important;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 2 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .form-group label {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.5rem !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.8rem !important;
+        font-size: 1rem !important;
+        border-radius: 8px !important;
+        width: 100% !important;
+        border: 2px solid rgba(251, 191, 36, 0.2) !important;
+        background: rgba(15, 23, 42, 0.8) !important;
+        color: var(--text-light) !important;
+        transition: border-color 0.3s ease !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none !important;
+        border-color: var(--gold) !important;
+        box-shadow: 0 0 10px rgba(251, 191, 36, 0.3) !important;
+    }
+    
+    .form-group textarea {
+        min-height: 80px !important;
+        resize: vertical !important;
+    }
+    
+    /* Character Grid Mobile - FIXED LAYOUT */
+    .character-grid,
+    .alumni-character-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+        margin: 1rem 0 !important;
+        padding: 0.5rem !important;
+        display: grid !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+    
+    .character-option,
+    .alumni-character-option {
+        padding: 0.6rem !important;
+        border-radius: 8px !important;
+        text-align: center !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        border: 2px solid rgba(251, 191, 36, 0.3) !important;
+        background: rgba(15, 23, 42, 0.6) !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 3 !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+    
+    .character-option:hover,
+    .alumni-character-option:hover,
+    .character-option.selected,
+    .alumni-character-option.selected {
+        border-color: var(--gold) !important;
+        background: rgba(251, 191, 36, 0.1) !important;
+        transform: translateY(-2px) !important;
+    }
+    
+    .character-icon,
+    .alumni-character-icon {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.3rem !important;
+        display: block !important;
+        position: relative !important;
+        z-index: 4 !important;
+        line-height: 1 !important;
+    }
+    
+    .character-name,
+    .alumni-character-name {
+        font-size: 0.75rem !important;
+        font-weight: 500 !important;
+        display: block !important;
+        position: relative !important;
+        z-index: 4 !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+    }
+    
+    /* Signature Section Mobile - FIXED */
+    .signature-section {
+        margin-top: 1.5rem !important;
+        padding: 1rem !important;
+        background: rgba(15, 23, 42, 0.8) !important;
+        border-radius: 12px !important;
+        border: 2px solid rgba(251, 191, 36, 0.3) !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .signature-section h4 {
+        font-size: 1rem !important;
+        margin-bottom: 0.8rem !important;
+        text-align: center !important;
+        color: var(--gold) !important;
+        display: block !important;
+    }
+    
+    .signature-canvas {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100px !important;
+        border: 2px solid rgba(251, 191, 36, 0.5) !important;
+        border-radius: 8px !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        cursor: crosshair !important;
+        display: block !important;
+        margin: 0 auto 1rem auto !important;
+        box-sizing: border-box !important;
+        touch-action: none !important;
+    }
+    
+    .signature-buttons {
+        display: flex !important;
+        gap: 0.5rem !important;
+        margin-top: 0.5rem !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        width: 100% !important;
+    }
+    
+    .signature-button {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.8rem !important;
+        border-radius: 6px !important;
+        border: 1px solid rgba(251, 191, 36, 0.5) !important;
+        background: rgba(251, 191, 36, 0.15) !important;
+        color: var(--gold) !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        flex: 1 !important;
+        min-width: 80px !important;
+        text-align: center !important;
+    }
+    
+    .signature-button:hover {
+        background: rgba(251, 191, 36, 0.25) !important;
+        border-color: var(--gold) !important;
+    }
+    
+    /* Modal Mobile */
+    .modal-content {
+        width: 95% !important;
+        max-width: 400px !important;
+        padding: 2rem 1.5rem !important;
+        margin: 1rem !important;
+        border-radius: 15px !important;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+    }
+    
+    .modal-message {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    .modal-button {
+        padding: 0.8rem 2rem !important;
+        font-size: 1rem !important;
+        width: 100% !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Submit Button Mobile */
+    .submit-button {
+        width: 100% !important;
+        padding: 1rem !important;
+        font-size: 1.1rem !important;
+        margin-top: 2rem !important;
+        border-radius: 10px !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Force visibility for all form elements */
+    .form-section * {
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: block !important;
+    }
+    
+    .form-section .character-grid,
+    .form-section .alumni-character-grid {
+        display: grid !important;
+    }
+    
+    .form-section .signature-buttons {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ultra Mobile Enhancements - PERFECTED */
+    .container {
+        padding: 0 0.8rem !important;
+    }
+    
+    .nav-container {
+        padding: 0 0.8rem !important;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem !important;
+    }
+    
+    .form-container {
+        margin: 0.5rem auto !important;
+        padding: 0.8rem !important;
+        width: 98% !important;
+    }
+    
+    .form-section-header h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    .form-group {
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.7rem !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .character-grid,
+    .alumni-character-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem !important;
+        padding: 0.3rem !important;
+    }
+    
+    .character-option,
+    .alumni-character-option {
+        padding: 0.5rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    .character-icon,
+    .alumni-character-icon {
+        font-size: 1.6rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+    
+    .character-name,
+    .alumni-character-name {
+        font-size: 0.7rem !important;
+    }
+    
+    .signature-section {
+        padding: 0.8rem !important;
+        margin-top: 1rem !important;
+    }
+    
+    .signature-canvas {
+        height: 90px !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .signature-buttons {
+        gap: 0.3rem !important;
+        margin-top: 0.3rem !important;
+    }
+    
+    .signature-button {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.75rem !important;
+        min-width: 70px !important;
+    }
+    
+    .modal-content {
+        width: 98% !important;
+        padding: 1.2rem 0.8rem !important;
+    }
+    
+    .nav-link {
+        padding: 0.8rem 1.5rem !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .submit-button {
+        padding: 0.8rem !important;
+        font-size: 1rem !important;
+        margin-top: 1.5rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .nav-container {
+        padding: 0 0.5rem;
+    }
+    
+    .form-container {
+        padding: 0.8rem;
+    }
+    
+    .character-grid,
+    .alumni-character-grid {
+        gap: 0.5rem;
+    }
+    
+    .character-option,
+    .alumni-character-option {
+        padding: 0.5rem;
+    }
+}
+

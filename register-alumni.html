@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Alumni - 63rd Anniversary Celebration | CNN 2K25</title>
+    <link rel="icon" type="image/jpeg" href="https://res.cloudinary.com/dfgycmek8/image/upload/v1760275475/favicone_cnn_x9paeu.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">AIESEC Carthage</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="register.html" class="nav-link">Register</a></li>
+                <li><a href="register-alumni.html" class="nav-link active">Register as Alumni</a></li>
+                <li><a href="wonderland-gallery.html" class="nav-link">Our Wonderland</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero register-hero" style="
+        background-image: url('https://res.cloudinary.com/dfgycmek8/image/upload/v1760228214/cover_2_vqqctp.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    ">
+        <!-- Overlay flou -->
+        <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            z-index: 1;
+        "></div>
+        
+        <div class="floating-elements" style="z-index: 2; position: relative;">
+            <div class="floating-card card-1">♠</div>
+            <div class="floating-card card-2">♥</div>
+            <div class="floating-card card-3">♦</div>
+            <div class="floating-card card-4">♣</div>
+            <div class="key">🔑</div>
+            <div class="clock">🕰️</div>
+            <div class="teacup">☕</div>
+            <div class="character-hero character-1">🎩</div>
+            <div class="character-hero character-2">🐰</div>
+            <div class="character-hero character-3">😸</div>
+        </div>
+        <div class="hero-content" style="z-index: 2; position: relative;">
+            <h1 class="page-title fade-in" style="font-size: 4rem; margin-bottom: 1.5rem;">🎉 Alumni Presence Form</h1>
+            <p class="page-subtitle fade-in-delay" style="font-size: 1.8rem; margin-bottom: 3rem;">63rd Anniversary Celebration - AIESEC Carthage 🎂</p>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div style="
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            text-align: center;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        " onclick="document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' })">
+            <p style="
+                color: #fbbf24;
+                font-size: 1rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            ">Scroll to begin</p>
+            <div style="
+                font-size: 2.5rem;
+                color: #fbbf24;
+                text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            ">↓</div>
+        </div>
+    </section>
+    
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+    </style>
+
+    <!-- Registration Form Section -->
+    <section class="form-section section">
+        <!-- Wonderland Decorative Elements -->
+        <div class="wonderland-decorations">
+            <div class="decoration-left decoration-1">
+                <div class="character-float">🎩</div>
+                <div class="sparkle">✨</div>
+            </div>
+            <div class="decoration-right decoration-2">
+                <div class="character-float">🐰</div>
+                <div class="sparkle">💫</div>
+            </div>
+            <div class="decoration-left decoration-3">
+                <div class="character-float">😸</div>
+                <div class="flower">🌺</div>
+            </div>
+            <div class="decoration-right decoration-4">
+                <div class="character-float">👑</div>
+                <div class="sparkle">⭐</div>
+            </div>
+            <div class="decoration-left decoration-5">
+                <div class="character-float">🃏</div>
+                <div class="rose">🌹</div>
+            </div>
+            <div class="decoration-right decoration-6">
+                <div class="character-float">🎭</div>
+                <div class="sparkle">✨</div>
+            </div>
+            <div class="decoration-left decoration-7">
+                <div class="character-float">🦋</div>
+                <div class="mushroom">🍄</div>
+            </div>
+            <div class="decoration-right decoration-8">
+                <div class="character-float">🫖</div>
+                <div class="sparkle">💎</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-container fade-on-scroll visible">
+                <div class="form-intro">
+                    <h2>Welcome Back, Legend! 🌟</h2>
+                    <p>We have the honor of inviting you to celebrate 63 years of legend, impact and unforgettable memories with AIESEC Carthage.</p>
+                    <p>Thank you for confirming your presence by filling out this form.</p>
+                    
+                    <div class="event-details-box">
+                        <div class="event-icon">📍</div>
+                        <div class="event-details">
+                            <h3>Event Details</h3>
+                            <p><strong>📍 Location:</strong> Hotel Menara, Hammamet</p>
+                            <p><strong>📅 Date:</strong> October 25th</p>
+                        </div>
+                    </div>
+
+                    <div class="price-banner">
+                        <div class="price-icon">🏨</div>
+                        <div class="price-details">
+                            <h3>Accommodation Fee</h3>
+                            <p class="price-amount">70 DT</p>
+                            <p class="price-note">Your staying fees for a single night only</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="alumniRegistrationForm" class="registration-form">
+                    <!-- Section 1: Personal Information -->
+                    <div class="form-section-header">
+                        <h3>① 👤 Personal Information</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName" 
+                            placeholder="Enter your full name" 
+                            required
+                        >
+                        <span class="form-icon">👤</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="your.email@example.com" 
+                            required
+                        >
+                        <span class="form-icon">📧</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="+216 XX XXX XXX" 
+                            required
+                        >
+                        <span class="form-icon">📱</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aiesecMandate">Your mandate at AIESEC Carthage <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="aiesecMandate" 
+                            name="aiesecMandate" 
+                            placeholder="e.g., VP TM 2019-2020, Member 2018-2019" 
+                            required
+                        >
+                        <span class="form-icon">🎭</span>
+                    </div>
+
+                    <!-- Section 2: Attendance Type -->
+                    <div class="form-section-header">
+                        <h3>② 🎪 Attendance Type</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Will you be present for the 63rd Anniversary celebration? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="attendance" value="yes" required>
+                                <span class="radio-custom"></span>
+                                <span>Yes</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="attendance" value="no" required>
+                                <span class="radio-custom"></span>
+                                <span>No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>How will you attend the anniversary celebration? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="attendanceType" value="online" required>
+                                <span class="radio-custom"></span>
+                                <span>Online</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="attendanceType" value="in-person" required>
+                                <span class="radio-custom"></span>
+                                <span>In-person at the conference</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Premium Alumni Character -->
+                    <div class="form-section-header">
+                        <h3>③ 👑 Your Premium Alumni Identity</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Which premium Alice in Wonderland character represents your alumni legacy? <span class="required">*</span></label>
+                        <div class="character-grid alumni-character-grid">
+                            <label class="character-card alumni-character-card">
+                                <input type="radio" name="alumniCharacter" value="Royal Alice" required>
+                                <div class="character-content">
+                                    <div class="character-icon">👸</div>
+                                    <div class="character-name">Royal Alice</div>
+                                    <div class="character-trait">Legendary & Inspiring</div>
+                                    <div class="alumni-badge">Alumni</div>
+                                </div>
+                            </label>
+                            
+                            <label class="character-card alumni-character-card">
+                                <input type="radio" name="alumniCharacter" value="Grand Master Hatter" required>
+                                <div class="character-content">
+                                    <div class="character-icon">🎩</div>
+                                    <div class="character-name">Grand Master Hatter</div>
+                                    <div class="character-trait">Visionary & Mentor</div>
+                                    <div class="alumni-badge">Alumni</div>
+                                </div>
+                            </label>
+                            
+                            <label class="character-card alumni-character-card">
+                                <input type="radio" name="alumniCharacter" value="Ancient Cheshire Cat" required>
+                                <div class="character-content">
+                                    <div class="character-icon">😸</div>
+                                    <div class="character-name">Ancient Cheshire Cat</div>
+                                    <div class="character-trait">Wise & Enigmatic</div>
+                                    <div class="alumni-badge">Alumni</div>
+                                </div>
+                            </label>
+                            
+                            <label class="character-card alumni-character-card">
+                                <input type="radio" name="alumniCharacter" value="Time Master Rabbit" required>
+                                <div class="character-content">
+                                    <div class="character-icon">🐰</div>
+                                    <div class="character-name">Time Master Rabbit</div>
+                                    <div class="character-trait">Timeless & Strategic</div>
+                                    <div class="alumni-badge">Alumni</div>
+                                </div>
+                            </label>
+                            
+                            <label class="character-card alumni-character-card">
+                                <input type="radio" name="alumniCharacter" value="Eternal Queen" required>
+                                <div class="character-content">
+                                    <div class="character-icon">👑</div>
+                                    <div class="character-name">Eternal Queen</div>
+                                    <div class="character-trait">Eternal & Powerful</div>
+                                    <div class="alumni-badge">Alumni</div>
+                                </div>
+                            </label>
+                            
+                            <label class="character-card alumni-character-card">
+                                <input type="radio" name="alumniCharacter" value="Wisdom Keeper Caterpillar" required>
+                                <div class="character-content">
+                                    <div class="character-icon">🐛</div>
+                                    <div class="character-name">Wisdom Keeper Caterpillar</div>
+                                    <div class="character-trait">Philosophical & Deep</div>
+                                    <div class="alumni-badge">Alumni</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Memory Sharing -->
+                    <div class="form-section-header">
+                        <h3>④ 📸 Share a Memory About Your Term</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memoryShare">Share a memory about your term <span class="required">*</span></label>
+                        <textarea 
+                            id="memoryShare" 
+                            name="memoryShare" 
+                            rows="4" 
+                            placeholder="Tell us about your favorite memory, achievement, or experience during your AIESEC Carthage term..."
+                            required
+                        ></textarea>
+                        <span class="form-icon textarea-icon">📸</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memoryImage">Upload a photo from your term <span class="required">*</span></label>
+                        <input 
+                            type="file" 
+                            id="memoryImage" 
+                            name="memoryImage" 
+                            accept="image/jpeg,image/png,image/gif"
+                            required
+                        >
+                        <small class="form-helper">Format: JPG, PNG, GIF (max 50MB)</small>
+                        <span class="form-icon">📷</span>
+                    </div>
+
+                    <!-- Section 4.5: Alumni Photo for Wonderland -->
+                    <div class="form-section-header">
+                        <h3>④.⑤ 🖼️ Your Photo for Wonderland</h3>
+                        <p class="section-description">Upload a current photo of yourself that will appear in our Wonderland gallery</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alumniPhoto">Upload your current photo <span class="required">*</span></label>
+                        <input 
+                            type="file" 
+                            id="alumniPhoto" 
+                            name="alumniPhoto" 
+                            accept="image/jpeg,image/png,image/gif"
+                            required
+                        >
+                        <small class="form-helper">This photo will be displayed in the Wonderland gallery (Format: JPG, PNG, GIF - max 50MB)</small>
+                        <span class="form-icon">👤</span>
+                    </div>
+
+                    <!-- Section 5: Updates Preference -->
+                    <div class="form-section-header">
+                        <h3>⑤ 📬 Stay Connected</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Would you like to receive updates about alumni activities and gatherings? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="alumniUpdates" value="yes" required>
+                                <span class="radio-custom"></span>
+                                <span>Yes</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="alumniUpdates" value="no" required>
+                                <span class="radio-custom"></span>
+                                <span>No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Section 6: Accommodation -->
+                    <div class="form-section-header">
+                        <h3>⑥ 🏨 Accommodation Details</h3>
+                    </div>
+
+                    <div class="form-info-box">
+                        <p><strong>🏨 Your staying fees for a single night: 70 DT</strong></p>
+                        <p>Base accommodation is included in this fee.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Would you like a single room? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="singleRoom" value="no" required>
+                                <span class="radio-custom"></span>
+                                <span>No (Shared accommodation included)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="singleRoom" value="yes" required>
+                                <span class="radio-custom"></span>
+                                <span>Yes (+50 DT for single room)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Section 7: Terms & Conditions -->
+                    <div class="form-section-header">
+                        <h3>⑦ 📄 Terms & Conditions</h3>
+                    </div>
+
+                    <div class="terms-box">
+                        <ul>
+                            <li>🎫 I understand the accommodation fee is <strong>70 DT</strong> for a single night only.</li>
+                            <li>🏨 I acknowledge that shared accommodation is included in the base fee.</li>
+                            <li>💰 I agree to pay an additional <strong>50 DT</strong> if I choose a single room upgrade.</li>
+                            <li>❌ I accept the 100% cancellation fee if I cancel my registration.</li>
+                            <li>📋 I confirm all provided information is accurate and complete.</li>
+                            <li>⚠️ I understand that no refunds will be issued for no-shows or late cancellations.</li>
+                            <li>✨ I agree to follow all event rules and embrace the Wonderland spirit!</li>
+                            <li>📧 I consent to receive updates about alumni activities if I opted in.</li>
+                        </ul>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">
+                                I fully agree to the terms and conditions outlined above. <span class="required">*</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Section 8: Digital Signature -->
+                    <div class="form-section-header">
+                        <h3>⑧ ✍️ Digital Signature</h3>
+                    </div>
+
+                    <div class="signature-section">
+                        <div class="signature-container">
+                            <canvas id="signatureCanvas" width="400" height="150" style="border: 2px dashed #ccc; border-radius: 8px; cursor: crosshair;"></canvas>
+                            <div class="signature-controls">
+                                <button type="button" id="clearSignature" class="clear-signature-btn">Clear Signature</button>
+                                <button type="button" id="saveSignature" class="save-signature-btn">Save Signature</button>
+                            </div>
+                            <input type="hidden" id="signatureData" name="signatureData" required>
+                        </div>
+                        <p class="signature-note">Please sign above to confirm your registration</p>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        <span>Confirm Alumni Presence</span>
+                        <span class="arrow">→</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">🎉</div>
+            <h2>Welcome Back, Alumni!</h2>
+            <p>Your presence has been successfully confirmed.</p>
+            <p class="modal-message">We can't wait to celebrate 63 years of AIESEC Carthage with you!</p>
+            <button class="modal-button" onclick="window.location.href='wonderland-gallery.html'">
+                <span>Explore More</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AIESEC Carthage</h3>
+                    <p>Empowering young people to develop their leadership potential through international experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="register-alumni.html">Register as Alumni</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/cnn_2k25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/g/1ASiyxsszF/" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 58 335 702</p>
+                        <p><i class="fas fa-phone"></i> 52 960 205</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AIESEC Carthage - CNN 2K25. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===========================================
+        // Alumni Form Submission Script
+        // Gestion complète du formulaire alumni
+        // ===========================================
+
+        // ⚠️ IMPORTANT : URL Apps Script mise à jour
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx2EOI6LM1r5oJYFdqRvHd-Sf4YgIHULfE0uc_45OOD4IPIRFgZ9k10HWDhvwXSi-bP/exec';
+        
+        // Force mobile visibility function
+        function forceMobileVisibility() {
+            // Check if we're on mobile
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile) {
+                console.log('📱 Mobile detected - forcing alumni form visibility');
+                
+                // Force form visibility
+                const formSection = document.querySelector('.form-section');
+                if (formSection) {
+                    formSection.style.display = 'block';
+                    formSection.style.visibility = 'visible';
+                    formSection.style.opacity = '1';
+                    
+                    // Force all form children visibility
+                    const formElements = formSection.querySelectorAll('*');
+                    formElements.forEach(element => {
+                        element.style.visibility = 'visible';
+                        element.style.opacity = '1';
+                        if (element.classList.contains('character-grid') || element.classList.contains('alumni-character-grid')) {
+                            element.style.display = 'grid';
+                        } else if (element.classList.contains('signature-buttons')) {
+                            element.style.display = 'flex';
+                        } else if (element.tagName !== 'IMG') {
+                            element.style.display = 'block';
+                        }
+                    });
+                }
+                
+                console.log('✅ Alumni form mobile visibility forced');
+            }
+        }
+
+        // Initialize mobile visibility on load and resize
+        document.addEventListener('DOMContentLoaded', function() {
+            forceMobileVisibility();
+        });
+
+        window.addEventListener('resize', function() {
+            forceMobileVisibility();
+        });
+
+        // FORCER L'AFFICHAGE DU FORMULAIRE
+        document.addEventListener('DOMContentLoaded', function() {
+            // Forcer l'affichage du formulaire
+            const formContainer = document.querySelector('.form-container');
+            if (formContainer) {
+                formContainer.style.opacity = '1';
+                formContainer.style.transform = 'translateY(0)';
+                formContainer.style.visibility = 'visible';
+                formContainer.style.display = 'block';
+                formContainer.classList.add('visible');
+            }
+            
+            // Forcer l'affichage du formulaire de registration
+            const registrationForm = document.getElementById('alumniRegistrationForm');
+            if (registrationForm) {
+                registrationForm.style.opacity = '1';
+                registrationForm.style.visibility = 'visible';
+                registrationForm.style.display = 'block';
+            }
+        });
+
+        // Digital Signature Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('signatureCanvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            const signatureDataInput = document.getElementById('signatureData');
+            const clearBtn = document.getElementById('clearSignature');
+            const saveBtn = document.getElementById('saveSignature');
+            
+            let isDrawing = false;
+            let hasSignature = false;
+
+            // Set canvas style
+            ctx.strokeStyle = '#1e293b';
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            // Mouse events
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mouseout', stopDrawing);
+
+            // Touch events for mobile
+            canvas.addEventListener('touchstart', handleTouch);
+            canvas.addEventListener('touchmove', handleTouch);
+            canvas.addEventListener('touchend', stopDrawing);
+
+            function startDrawing(e) {
+                isDrawing = true;
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+            }
+
+            function draw(e) {
+                if (!isDrawing) return;
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                hasSignature = true;
+            }
+
+            function stopDrawing() {
+                isDrawing = false;
+                ctx.beginPath();
+            }
+
+            function handleTouch(e) {
+                e.preventDefault();
+                const touch = e.touches[0];
+                const mouseEvent = new MouseEvent(e.type === 'touchstart' ? 'mousedown' : 
+                                                e.type === 'touchmove' ? 'mousemove' : 'mouseup', {
+                    clientX: touch.clientX,
+                    clientY: touch.clientY
+                });
+                canvas.dispatchEvent(mouseEvent);
+            }
+
+            if (clearBtn) {
+                clearBtn.addEventListener('click', function() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    signatureDataInput.value = '';
+                    hasSignature = false;
+                });
+            }
+
+            if (saveBtn) {
+                saveBtn.addEventListener('click', function() {
+                    if (hasSignature) {
+                        const signatureData = canvas.toDataURL();
+                        signatureDataInput.value = signatureData;
+                        alert('Signature saved successfully!');
+                    } else {
+                        alert('Please draw your signature first.');
+                    }
+                });
+            }
+
+            // Store signature state globally for form validation
+            window.alumniHasSignature = function() {
+                return hasSignature;
+            };
+            
+            window.alumniSaveSignature = function() {
+                if (hasSignature && !signatureDataInput.value) {
+                    const signatureData = canvas.toDataURL();
+                    signatureDataInput.value = signatureData;
+                }
+            };
+        });
+
+        // Alumni Form Submission with Google Apps Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const alumniForm = document.getElementById('alumniRegistrationForm');
+            const successModal = document.getElementById('successModal');
+
+            if (alumniForm) {
+                alumniForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    // Désactiver le bouton
+                    const submitButton = alumniForm.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.innerHTML;
+                    submitButton.disabled = true;
+                    
+                    // Créer et afficher l'overlay de chargement
+                    showAlumniLoadingOverlay();
+                    
+                    try {
+                        // Gérer l'upload de photo de mémoire
+                        let memoryPhotoData = null;
+                        let memoryPhotoName = 'Pas de photo de mémoire';
+                        
+                        const memoryPhotoInput = document.getElementById('memoryImage');
+                        if (memoryPhotoInput && memoryPhotoInput.files && memoryPhotoInput.files[0]) {
+                            const file = memoryPhotoInput.files[0];
+                            memoryPhotoName = file.name;
+                            
+                            // Convertir l'image en base64
+                            updateAlumniLoadingMessage('📸 Preparing your memory photo...', 'Converting your memory to wonderland format...');
+                            memoryPhotoData = await fileToBase64(file);
+                            
+                            await sleep(500);
+                        }
+                        
+                        // Gérer l'upload de photo alumni pour wonderland
+                        let alumniPhotoData = null;
+                        let alumniPhotoName = 'Pas de photo alumni';
+                        
+                        const alumniPhotoInput = document.getElementById('alumniPhoto');
+                        if (alumniPhotoInput && alumniPhotoInput.files && alumniPhotoInput.files[0]) {
+                            const file = alumniPhotoInput.files[0];
+                            alumniPhotoName = file.name;
+                            
+                            // Convertir l'image en base64
+                            updateAlumniLoadingMessage('👤 Preparing your alumni photo...', 'Processing your photo for the Wonderland gallery...');
+                            alumniPhotoData = await fileToBase64(file);
+                            
+                            await sleep(500);
+                        } else {
+                            updateAlumniLoadingMessage('✨ Gathering your information...', 'Preparing your alumni registration...');
+                            await sleep(500);
+                        }
+
+                        // Gérer la signature digitale
+                        if (window.alumniHasSignature && !window.alumniHasSignature()) {
+                            hideAlumniLoadingOverlay();
+                            alert('⚠️ Please provide your digital signature before submitting.');
+                            submitButton.disabled = false;
+                            return;
+                        }
+                        
+                        // Sauvegarder la signature si nécessaire
+                        if (window.alumniSaveSignature) {
+                            window.alumniSaveSignature();
+                        }
+                        
+                        const signatureData = document.getElementById('signatureData').value;
+                        
+                        // Récupérer toutes les valeurs du formulaire alumni
+                        const formData = {
+                            // Marqueur pour identifier les alumni
+                            isAlumni: true,
+                            formType: 'alumni',
+                            
+                            // Informations personnelles
+                            fullName: document.getElementById('fullName').value,
+                            email: document.getElementById('email').value,
+                            phone: document.getElementById('phone').value,
+                            aiesecMandate: document.getElementById('aiesecMandate').value,
+                            
+                            // Type d'attendance
+                            attendance: document.querySelector('input[name="attendance"]:checked')?.value || '',
+                            attendanceType: document.querySelector('input[name="attendanceType"]:checked')?.value || '',
+                            
+                            // Personnage alumni
+                            alumniCharacter: document.querySelector('input[name="alumniCharacter"]:checked')?.value || '',
+                            
+                            // Mémoire et photo
+                            memoryShare: document.getElementById('memoryShare').value,
+                            memoryPhotoData: memoryPhotoData,  // Base64 de la photo de mémoire
+                            memoryPhotoName: memoryPhotoName,  // Nom du fichier
+                            
+                            // Photo alumni pour wonderland
+                            alumniPhotoData: alumniPhotoData,  // Base64 de la photo alumni
+                            alumniPhotoName: alumniPhotoName,  // Nom du fichier alumni
+                            
+                            // Préférences de mise à jour
+                            alumniUpdates: document.querySelector('input[name="alumniUpdates"]:checked')?.value || '',
+                            
+                            // Hébergement
+                            singleRoom: document.querySelector('input[name="singleRoom"]:checked')?.value || '',
+                            
+                            // Signature digitale
+                            signatureData: signatureData,
+                            
+                            // Termes et conditions
+                            terms: document.getElementById('terms').checked,
+                            
+                            // Timestamp
+                            timestamp: new Date().toISOString()
+                        };
+                        
+                        // Valider les termes et conditions
+                        if (!formData.terms) {
+                            hideAlumniLoadingOverlay();
+                            alert('⚠️ Please accept the terms and conditions to continue.');
+                            submitButton.disabled = false;
+                            return;
+                        }
+                        
+                        // Envoyer les données
+                        updateAlumniLoadingMessage('👑 Honoring Alumni Legacy...', 'Sending your registration to the Alumni Hall of Fame...');
+                        
+                        const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                            method: 'POST',
+                            mode: 'no-cors', // Important pour Apps Script
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(formData)
+                        });
+                        
+                        console.log('✅ Alumni inscription envoyée avec succès!', formData);
+                        
+                        // Message de succès final
+                        updateAlumniLoadingMessage('🎉 Welcome Back, Legend!', 'Your alumni registration has been received successfully!');
+                        await sleep(1500);
+                        
+                        // Masquer l'overlay
+                        hideAlumniLoadingOverlay();
+                        
+                        // Afficher le modal de succès
+                        if (successModal) {
+                            successModal.classList.add('show');
+                            
+                            // Réinitialiser le formulaire
+                            alumniForm.reset();
+                            
+                            // Effacer la signature
+                            const canvas = document.getElementById('signatureCanvas');
+                            if (canvas) {
+                                const ctx = canvas.getContext('2d');
+                                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                            }
+                            
+                            // Ajouter l'effet confetti
+                            createAlumniConfetti();
+                        }
+                        
+                    } catch (error) {
+                        console.error('❌ Erreur lors de l\'envoi:', error);
+                        hideAlumniLoadingOverlay();
+                        alert('⚠️ An error occurred. Please try again or contact the OC team.');
+                    } finally {
+                        // Restaurer le bouton
+                        submitButton.disabled = false;
+                    }
+                });
+                
+                // Fonction pour convertir un fichier en base64
+                function fileToBase64(file) {
+                    return new Promise((resolve, reject) => {
+                        const reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        reader.onload = () => resolve(reader.result);
+                        reader.onerror = error => reject(error);
+                    });
+                }
+                
+                // Fonction pour créer et afficher l'overlay de chargement alumni
+                function showAlumniLoadingOverlay() {
+                    let overlay = document.getElementById('alumniLoadingOverlay');
+                    if (!overlay) {
+                        overlay = document.createElement('div');
+                        overlay.id = 'alumniLoadingOverlay';
+                        overlay.innerHTML = `
+                            <div class="alumni-loading-container">
+                                <div class="alumni-spinner">
+                                    <div class="crown-icon">👑</div>
+                                    <div class="spinner-ring"></div>
+                                    <div class="spinner-ring-2"></div>
+                                </div>
+                                <h3 class="loading-title" id="alumniLoadingTitle">Honoring Alumni Legacy...</h3>
+                                <p class="loading-subtitle" id="alumniLoadingSubtitle">Please wait while we process your alumni registration</p>
+                                <div class="loading-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        `;
+                        
+                        // Ajouter les styles
+                        const style = document.createElement('style');
+                        style.textContent = `
+                            #alumniLoadingOverlay {
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background: rgba(15, 23, 42, 0.95);
+                                backdrop-filter: blur(10px);
+                                z-index: 99999;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                animation: fadeIn 0.3s ease;
+                            }
+                            
+                            .alumni-loading-container {
+                                text-align: center;
+                                padding: 2rem;
+                            }
+                            
+                            .alumni-spinner {
+                                position: relative;
+                                width: 120px;
+                                height: 120px;
+                                margin: 0 auto 2rem;
+                            }
+                            
+                            .crown-icon {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                font-size: 3rem;
+                                animation: crownBounce 1s ease-in-out infinite;
+                            }
+                            
+                            @keyframes crownBounce {
+                                0%, 100% { transform: translate(-50%, -50%) scale(1); }
+                                50% { transform: translate(-50%, -60%) scale(1.1); }
+                            }
+                            
+                            .spinner-ring, .spinner-ring-2 {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                border: 3px solid transparent;
+                                border-top-color: #fbbf24;
+                                border-radius: 50%;
+                                animation: spin 1.5s linear infinite;
+                            }
+                            
+                            .spinner-ring-2 {
+                                border-top-color: #f59e0b;
+                                animation: spin 2s linear infinite reverse;
+                                opacity: 0.5;
+                            }
+                            
+                            @keyframes spin {
+                                to { transform: rotate(360deg); }
+                            }
+                            
+                            .loading-title {
+                                font-size: 1.8rem;
+                                color: #fbbf24;
+                                margin-bottom: 0.5rem;
+                                font-family: 'Cinzel', serif;
+                                text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+                                animation: glow 2s ease-in-out infinite;
+                            }
+                            
+                            @keyframes glow {
+                                0%, 100% { opacity: 1; }
+                                50% { opacity: 0.7; }
+                            }
+                            
+                            .loading-subtitle {
+                                font-size: 1rem;
+                                color: #cbd5e1;
+                                margin-bottom: 1.5rem;
+                            }
+                            
+                            .loading-dots {
+                                display: flex;
+                                justify-content: center;
+                                gap: 0.5rem;
+                            }
+                            
+                            .loading-dots span {
+                                width: 10px;
+                                height: 10px;
+                                background: #fbbf24;
+                                border-radius: 50%;
+                                animation: dotPulse 1.4s ease-in-out infinite;
+                            }
+                            
+                            .loading-dots span:nth-child(2) {
+                                animation-delay: 0.2s;
+                            }
+                            
+                            .loading-dots span:nth-child(3) {
+                                animation-delay: 0.4s;
+                            }
+                            
+                            @keyframes dotPulse {
+                                0%, 80%, 100% {
+                                    opacity: 0.3;
+                                    transform: scale(0.8);
+                                }
+                                40% {
+                                    opacity: 1;
+                                    transform: scale(1.2);
+                                }
+                            }
+                        `;
+                        document.head.appendChild(style);
+                        document.body.appendChild(overlay);
+                    }
+                    
+                    overlay.style.display = 'flex';
+                }
+                
+                // Fonction pour masquer l'overlay alumni
+                function hideAlumniLoadingOverlay() {
+                    const overlay = document.getElementById('alumniLoadingOverlay');
+                    if (overlay) {
+                        overlay.style.animation = 'fadeOut 0.3s ease';
+                        setTimeout(() => {
+                            overlay.style.display = 'none';
+                        }, 300);
+                    }
+                }
+                
+                // Fonction pour mettre à jour le message de chargement alumni
+                function updateAlumniLoadingMessage(title, subtitle) {
+                    const titleEl = document.getElementById('alumniLoadingTitle');
+                    const subtitleEl = document.getElementById('alumniLoadingSubtitle');
+                    
+                    if (titleEl) {
+                        titleEl.style.animation = 'none';
+                        setTimeout(() => {
+                            titleEl.textContent = title;
+                            titleEl.style.animation = 'glow 2s ease-in-out infinite';
+                        }, 50);
+                    }
+                    
+                    if (subtitleEl) {
+                        subtitleEl.textContent = subtitle;
+                    }
+                }
+                
+                // Fonction utilitaire pour attendre
+                function sleep(ms) {
+                    return new Promise(resolve => setTimeout(resolve, ms));
+                }
+                
+                // Confetti spécial pour les alumni
+                function createAlumniConfetti() {
+                    const colors = ['#fbbf24', '#f59e0b', '#d97706', '#92400e']; // Couleurs dorées
+                    const confettiCount = 75; // Plus de confetti pour les alumni
+                    
+                    for (let i = 0; i < confettiCount; i++) {
+                        const confetti = document.createElement('div');
+                        confetti.style.position = 'fixed';
+                        confetti.style.width = '12px';
+                        confetti.style.height = '12px';
+                        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                        confetti.style.left = Math.random() * 100 + '%';
+                        confetti.style.top = '-12px';
+                        confetti.style.opacity = '1';
+                        confetti.style.borderRadius = '50%';
+                        confetti.style.pointerEvents = 'none';
+                        confetti.style.zIndex = '9999';
+                        confetti.style.boxShadow = '0 0 6px rgba(251, 191, 36, 0.8)';
+                        
+                        document.body.appendChild(confetti);
+                        
+                        const duration = Math.random() * 4 + 3; // Plus long pour les alumni
+                        const rotation = Math.random() * 360;
+                        const xMovement = (Math.random() - 0.5) * 300;
+                        
+                        confetti.animate([
+                            {
+                                transform: `translateY(0) rotate(0deg) translateX(0)`,
+                                opacity: 1
+                            },
+                            {
+                                transform: `translateY(100vh) rotate(${rotation}deg) translateX(${xMovement}px)`,
+                                opacity: 0
+                            }
+                        ], {
+                            duration: duration * 1000,
+                            easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                        });
+                        
+                        setTimeout(() => {
+                            confetti.remove();
+                        }, duration * 1000);
+                    }
+                }
+            }
+        });
+    </script>
+
+    <style>
+        /* FORCER L'AFFICHAGE DU FORMULAIRE */
+        .form-container {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+        
+        .fade-on-scroll {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            visibility: visible !important;
+        }
+        
+        .visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+        
+        .registration-form {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+        
+        /* S'assurer que toutes les sections du formulaire sont visibles */
+        .form-section-header,
+        .form-group,
+        .character-grid,
+        .alumni-character-grid {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* Désactiver toutes les animations qui pourraient cacher le formulaire */
+        .form-container * {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+            animation: none !important;
+        }
+        
+        /* Alumni Character Styling */
+        .alumni-character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .alumni-character-card {
+            position: relative;
+            border: 3px solid transparent;
+            background: linear-gradient(135deg, #1e293b, #334155);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .alumni-character-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #fbbf24, #f59e0b, #d97706, #fbbf24);
+            border-radius: inherit;
+            padding: 3px;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+        }
+
+        .alumni-character-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(251, 191, 36, 0.3);
+        }
+
+        .alumni-character-card .character-content {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .alumni-character-card .character-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.5));
+        }
+
+        .alumni-character-card .character-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fbbf24;
+            margin-bottom: 0.25rem;
+        }
+
+        .alumni-character-card .character-trait {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+
+        .alumni-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: linear-gradient(45deg, #fbbf24, #f59e0b);
+            color: #1e293b;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+        }
+
+        /* Event Details Box */
+        .event-details-box {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            border: 2px solid #fbbf24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 8px 32px rgba(251, 191, 36, 0.1);
+        }
+
+        .event-icon {
+            font-size: 2.5rem;
+            color: #fbbf24;
+        }
+
+        .event-details h3 {
+            color: #fbbf24;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .event-details p {
+            margin: 0.25rem 0;
+            color: #e2e8f0;
+        }
+
+        /* Signature Section */
+        .signature-section {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            border: 2px solid #fbbf24;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .signature-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #signatureCanvas {
+            background: #ffffff;
+            border-radius: 8px;
+        }
+
+        .signature-controls {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .clear-signature-btn,
+        .save-signature-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .clear-signature-btn {
+            background: #ef4444;
+            color: white;
+        }
+
+        .clear-signature-btn:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        .save-signature-btn {
+            background: #22c55e;
+            color: white;
+        }
+
+        .save-signature-btn:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+        }
+
+        .signature-note {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* Form Info Box Updates */
+        .form-info-box {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            border: 2px solid #fbbf24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 8px 32px rgba(251, 191, 36, 0.1);
+        }
+
+        .form-info-box p {
+            margin: 0.5rem 0;
+            color: #e2e8f0;
+        }
+
+        .form-info-box strong {
+            color: #fbbf24;
+        }
+    </style>
+</body>
+</html>
