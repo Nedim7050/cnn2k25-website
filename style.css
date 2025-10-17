@@ -2467,12 +2467,16 @@ cite {
 /* FIXED: Values grid mobile layout - 3 columns horizontal */
 @media (max-width: 768px) {
     .values-grid {
+        display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 1rem !important;
+        width: 100% !important;
     }
     
     .value-card {
         padding: 1rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     
     .value-number {
@@ -3418,10 +3422,11 @@ cite {
         display: flex;
     }
     
-    .cards-grid,
-    .values-grid {
+    .cards-grid {
         grid-template-columns: 1fr;
     }
+    
+    /* Values grid already handled above with 3 columns on mobile */
     
     .form-container {
         padding: 2rem;
@@ -4006,10 +4011,6 @@ cite {
         right: -40px;
     }
     
-    .wonderland-decorations {
-        opacity: 0.5;
-    }
-    
     /* Wonderland Portal Mobile - FIXED POSITIONING */
     .cheshire-cat {
         font-size: 4rem;
@@ -4046,11 +4047,23 @@ cite {
         display: none !important; /* Hide decorative elements on mobile to prevent overlap */
     }
     
+    /* FIXED: Ensure form sections are properly positioned */
+    .form-section {
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    .form-container {
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
     /* FIXED: Background image centering for mobile */
     .hero.wonderland-hero::before {
         background-position: center center !important;
         background-size: cover !important;
         transform: scale(1) !important; /* Remove scale to prevent right shift */
+        filter: blur(2px) !important; /* Keep light blur on mobile */
     }
     
     /* FIXED: About section visual circle positioning */
@@ -4058,6 +4071,8 @@ cite {
         width: 200px !important;
         height: 200px !important;
         margin: 1rem auto !important;
+        position: relative !important;
+        z-index: 1 !important;
     }
     
     .circle-icon {
@@ -4066,6 +4081,24 @@ cite {
     
     .circle-content p {
         font-size: 1rem !important;
+    }
+    
+    /* FIXED: About content layout to prevent overlap */
+    .about-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    
+    .about-text {
+        order: 1 !important;
+        text-align: center !important;
+    }
+    
+    .about-visual {
+        order: 2 !important;
+        display: flex !important;
+        justify-content: center !important;
     }
     
     .mushroom-1 {
@@ -4109,10 +4142,6 @@ cite {
         font-size: 1.5rem;
     }
     
-    /* Keep light blur on mobile */
-    .hero.wonderland-hero::before {
-        filter: blur(2px);
-    }
     
     .hero-title {
         font-size: 2.5rem;
@@ -4179,6 +4208,11 @@ cite {
     .navbar {
         padding: 0.8rem 0;
         z-index: 10000 !important; /* Ensure navbar stays on top */
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
     }
     
     .logo-text {
