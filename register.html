@@ -1005,13 +1005,31 @@
             }
             
             .textarea-icon {
+                position: absolute !important;
+                right: 15px !important;
                 top: 20px !important;
                 transform: none !important;
+                font-size: 1.2rem !important;
+                color: #fbbf24 !important;
+                pointer-events: none !important;
+                z-index: 1 !important;
             }
             
             .form-group textarea {
                 padding-top: 40px !important;
                 padding-right: 50px !important;
+                padding-left: 15px !important;
+                min-height: 100px !important;
+                resize: vertical !important;
+            }
+            
+            /* Labels des textareas */
+            .form-group label {
+                display: block !important;
+                margin-bottom: 0.5rem !important;
+                font-weight: 600 !important;
+                color: #fbbf24 !important;
+                font-size: 0.9rem !important;
             }
             
             /* Form section headers emoji alignment */
