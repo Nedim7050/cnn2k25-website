@@ -568,7 +568,7 @@
                     </div>
 
                     <div class="form-info-box">
-                        <p><strong>🚌 Bus transportation is available for 20 dinars per person.</strong></p>
+                        <p><strong>🚌 Bus transportation is available for 30 dinars per person.</strong></p>
                         <p>This includes round-trip transportation to the conference venue.</p>
                     </div>
 
@@ -578,7 +578,7 @@
                             <label class="radio-label">
                                 <input type="radio" name="busTransport" value="yes" required>
                                 <span class="radio-custom"></span>
-                                <span>Yes (+20 dinars)</span>
+                                <span>Yes (+30 dinars)</span>
                             </label>
                             <label class="radio-label">
                                 <input type="radio" name="busTransport" value="no" required>
@@ -835,10 +835,87 @@
                 }
             };
         });
+        
+        // FORCER L'AFFICHAGE DU FORMULAIRE - VERCEL FIX
+        document.addEventListener('DOMContentLoaded', function() {
+            // Forcer l'affichage du formulaire
+            const formContainer = document.querySelector('.form-container');
+            if (formContainer) {
+                formContainer.style.opacity = '1';
+                formContainer.style.transform = 'translateY(0)';
+                formContainer.style.visibility = 'visible';
+                formContainer.style.display = 'block';
+                formContainer.classList.add('visible');
+            }
+            
+            // Forcer l'affichage du formulaire de registration
+            const registrationForm = document.getElementById('registrationForm');
+            if (registrationForm) {
+                registrationForm.style.opacity = '1';
+                registrationForm.style.visibility = 'visible';
+                registrationForm.style.display = 'block';
+            }
+            
+            // Forcer l'affichage de la section du formulaire
+            const formSection = document.querySelector('.form-section');
+            if (formSection) {
+                formSection.style.display = 'block';
+                formSection.style.visibility = 'visible';
+                formSection.style.opacity = '1';
+            }
+        });
     </script>
     <script src="script.js"></script>
 
     <style>
+        /* FORCER L'AFFICHAGE DU FORMULAIRE EN DESKTOP - VERCEL FIX */
+        .form-container {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+        
+        .fade-on-scroll {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            visibility: visible !important;
+        }
+        
+        .visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+        
+        .registration-form {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+        
+        .form-section {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+        
+        .form-section-header,
+        .form-group,
+        .character-grid {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* Désactiver toutes les animations qui pourraient cacher le formulaire */
+        .form-container * {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+            animation: none !important;
+        }
+        
         /* Signature Section - FIXED MOBILE LAYOUT */
         .signature-section {
             background: linear-gradient(135deg, #1e293b, #334155);
