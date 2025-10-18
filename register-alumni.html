@@ -542,31 +542,21 @@
         </div>
     </footer>
 
-
-        // ===========================================
-        // Alumni Form Submission Script
-        // Gestion complète du formulaire alumni
-        // ===========================================
-
-        // ⚠️ IMPORTANT : URL Apps Script mise à jour
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx2EOI6LM1r5oJYFdqRvHd-Sf4YgIHULfE0uc_45OOD4IPIRFgZ9k10HWDhvwXSi-bP/exec';
+    <script>
+        // Alumni Form JavaScript functionality
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx9RFhp_OrZfXxgxq7wn79EE8PbU4bhxKcyEp8s8nlkHYBCnTEEoX68KQGAPg5QTHmD/exec';
         
         // Force mobile visibility function
         function forceMobileVisibility() {
-            // Check if we're on mobile
             const isMobile = window.innerWidth <= 768;
             
             if (isMobile) {
-                console.log('📱 Mobile detected - forcing alumni form visibility');
-                
-                // Force form visibility
                 const formSection = document.querySelector('.form-section');
                 if (formSection) {
                     formSection.style.display = 'block';
                     formSection.style.visibility = 'visible';
                     formSection.style.opacity = '1';
                     
-                    // Force all form children visibility
                     const formElements = formSection.querySelectorAll('*');
                     formElements.forEach(element => {
                         element.style.visibility = 'visible';
@@ -580,23 +570,14 @@
                         }
                     });
                 }
-                
-                console.log('✅ Alumni form mobile visibility forced');
             }
         }
 
         // Initialize mobile visibility on load and resize
         document.addEventListener('DOMContentLoaded', function() {
             forceMobileVisibility();
-        });
-
-        window.addEventListener('resize', function() {
-            forceMobileVisibility();
-        });
-
-        // FORCER L'AFFICHAGE DU FORMULAIRE
-        document.addEventListener('DOMContentLoaded', function() {
-            // Forcer l'affichage du formulaire
+            
+            // Force form visibility
             const formContainer = document.querySelector('.form-container');
             if (formContainer) {
                 formContainer.style.opacity = '1';
@@ -606,13 +587,16 @@
                 formContainer.classList.add('visible');
             }
             
-            // Forcer l'affichage du formulaire de registration
             const registrationForm = document.getElementById('alumniRegistrationForm');
             if (registrationForm) {
                 registrationForm.style.opacity = '1';
                 registrationForm.style.visibility = 'visible';
                 registrationForm.style.display = 'block';
             }
+        });
+
+        window.addEventListener('resize', function() {
+            forceMobileVisibility();
         });
 
         // Digital Signature Functionality
@@ -628,19 +612,16 @@
             let isDrawing = false;
             let hasSignature = false;
 
-            // Set canvas style
             ctx.strokeStyle = '#1e293b';
             ctx.lineWidth = 2;
             ctx.lineCap = 'round';
             ctx.lineJoin = 'round';
 
-            // Mouse events
             canvas.addEventListener('mousedown', startDrawing);
             canvas.addEventListener('mousemove', draw);
             canvas.addEventListener('mouseup', stopDrawing);
             canvas.addEventListener('mouseout', stopDrawing);
 
-            // Touch events for mobile
             canvas.addEventListener('touchstart', handleTouch);
             canvas.addEventListener('touchmove', handleTouch);
             canvas.addEventListener('touchend', stopDrawing);
@@ -700,7 +681,6 @@
                 });
             }
 
-            // Store signature state globally for form validation
             window.alumniHasSignature = function() {
                 return hasSignature;
             };
@@ -722,16 +702,12 @@
                 alumniForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
                     
-                    // Désactiver le bouton
                     const submitButton = alumniForm.querySelector('button[type="submit"]');
-                    const originalButtonText = submitButton.innerHTML;
                     submitButton.disabled = true;
                     
-                    // Créer et afficher l'overlay de chargement
                     showAlumniLoadingOverlay();
                     
                     try {
-                        // Gérer l'upload de photo de mémoire
                         let memoryPhotoData = null;
                         let memoryPhotoName = 'Pas de photo de mémoire';
                         
@@ -740,14 +716,12 @@
                             const file = memoryPhotoInput.files[0];
                             memoryPhotoName = file.name;
                             
-                            // Convertir l'image en base64
                             updateAlumniLoadingMessage('📸 Preparing your memory photo...', 'Converting your memory to wonderland format...');
                             memoryPhotoData = await fileToBase64(file);
                             
                             await sleep(500);
                         }
                         
-                        // Gérer l'upload de photo alumni pour wonderland
                         let alumniPhotoData = null;
                         let alumniPhotoName = 'Pas de photo alumni';
                         
@@ -756,7 +730,6 @@
                             const file = alumniPhotoInput.files[0];
                             alumniPhotoName = file.name;
                             
-                            // Convertir l'image en base64
                             updateAlumniLoadingMessage('👤 Preparing your alumni photo...', 'Processing your photo for the Wonderland gallery...');
                             alumniPhotoData = await fileToBase64(file);
                             
@@ -766,7 +739,6 @@
                             await sleep(500);
                         }
 
-                        // Gérer la signature digitale
                         if (window.alumniHasSignature && !window.alumniHasSignature()) {
                             hideAlumniLoadingOverlay();
                             alert('⚠️ Please provide your digital signature before submitting.');
@@ -774,58 +746,34 @@
                             return;
                         }
                         
-                        // Sauvegarder la signature si nécessaire
                         if (window.alumniSaveSignature) {
                             window.alumniSaveSignature();
                         }
                         
                         const signatureData = document.getElementById('signatureData').value;
                         
-                        // Récupérer toutes les valeurs du formulaire alumni
                         const formData = {
-                            // Marqueur pour identifier les alumni
                             isAlumni: true,
                             formType: 'alumni',
-                            
-                            // Informations personnelles
                             fullName: document.getElementById('fullName').value,
                             email: document.getElementById('email').value,
                             phone: document.getElementById('phone').value,
                             aiesecMandate: document.getElementById('aiesecMandate').value,
-                            
-                            // Type d'attendance
                             attendance: document.querySelector('input[name="attendance"]:checked')?.value || '',
                             attendanceType: document.querySelector('input[name="attendanceType"]:checked')?.value || '',
-                            
-                            // Personnage alumni
                             alumniCharacter: document.querySelector('input[name="alumniCharacter"]:checked')?.value || '',
-                            
-                            // Mémoire et photo
                             memoryShare: document.getElementById('memoryShare').value,
-                            memoryPhotoData: memoryPhotoData,  // Base64 de la photo de mémoire
-                            memoryPhotoName: memoryPhotoName,  // Nom du fichier
-                            
-                            // Photo alumni pour wonderland
-                            alumniPhotoData: alumniPhotoData,  // Base64 de la photo alumni
-                            alumniPhotoName: alumniPhotoName,  // Nom du fichier alumni
-                            
-                            // Préférences de mise à jour
+                            memoryPhotoData: memoryPhotoData,
+                            memoryPhotoName: memoryPhotoName,
+                            alumniPhotoData: alumniPhotoData,
+                            alumniPhotoName: alumniPhotoName,
                             alumniUpdates: document.querySelector('input[name="alumniUpdates"]:checked')?.value || '',
-                            
-                            // Hébergement
                             singleRoom: document.querySelector('input[name="singleRoom"]:checked')?.value || '',
-                            
-                            // Signature digitale
                             signatureData: signatureData,
-                            
-                            // Termes et conditions
                             terms: document.getElementById('terms').checked,
-                            
-                            // Timestamp
                             timestamp: new Date().toISOString()
                         };
                         
-                        // Valider les termes et conditions
                         if (!formData.terms) {
                             hideAlumniLoadingOverlay();
                             alert('⚠️ Please accept the terms and conditions to continue.');
@@ -833,56 +781,44 @@
                             return;
                         }
                         
-                        // Envoyer les données
                         updateAlumniLoadingMessage('👑 Honoring Alumni Legacy...', 'Sending your registration to the Alumni Hall of Fame...');
                         
                         const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
                             method: 'POST',
-                            mode: 'no-cors', // Important pour Apps Script
+                            mode: 'no-cors',
                             headers: {
                                 'Content-Type': 'application/json',
                             },
                             body: JSON.stringify(formData)
                         });
                         
-                        console.log('✅ Alumni inscription envoyée avec succès!', formData);
-                        
-                        // Message de succès final
                         updateAlumniLoadingMessage('🎉 Welcome Back, Legend!', 'Your alumni registration has been received successfully!');
                         await sleep(1500);
                         
-                        // Masquer l'overlay
                         hideAlumniLoadingOverlay();
                         
-                        // Afficher le modal de succès
                         if (successModal) {
                             successModal.classList.add('show');
                             
-                            // Réinitialiser le formulaire
                             alumniForm.reset();
                             
-                            // Effacer la signature
                             const canvas = document.getElementById('signatureCanvas');
                             if (canvas) {
                                 const ctx = canvas.getContext('2d');
                                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                             }
                             
-                            // Ajouter l'effet confetti
                             createAlumniConfetti();
                         }
                         
                     } catch (error) {
-                        console.error('❌ Erreur lors de l\'envoi:', error);
                         hideAlumniLoadingOverlay();
                         alert('⚠️ An error occurred. Please try again or contact the OC team.');
                     } finally {
-                        // Restaurer le bouton
                         submitButton.disabled = false;
                     }
                 });
                 
-                // Fonction pour convertir un fichier en base64
                 function fileToBase64(file) {
                     return new Promise((resolve, reject) => {
                         const reader = new FileReader();
@@ -892,7 +828,6 @@
                     });
                 }
                 
-                // Fonction pour créer et afficher l'overlay de chargement alumni
                 function showAlumniLoadingOverlay() {
                     let overlay = document.getElementById('alumniLoadingOverlay');
                     if (!overlay) {
@@ -913,7 +848,6 @@
                             </div>
                         `;
                         
-                        // Ajouter les styles
                         const style = document.createElement('style');
                         style.textContent = `
                             #alumniLoadingOverlay {
@@ -1039,7 +973,6 @@
                     overlay.style.display = 'flex';
                 }
                 
-                // Fonction pour masquer l'overlay alumni
                 function hideAlumniLoadingOverlay() {
                     const overlay = document.getElementById('alumniLoadingOverlay');
                     if (overlay) {
@@ -1050,7 +983,6 @@
                     }
                 }
                 
-                // Fonction pour mettre à jour le message de chargement alumni
                 function updateAlumniLoadingMessage(title, subtitle) {
                     const titleEl = document.getElementById('alumniLoadingTitle');
                     const subtitleEl = document.getElementById('alumniLoadingSubtitle');
@@ -1068,15 +1000,13 @@
                     }
                 }
                 
-                // Fonction utilitaire pour attendre
                 function sleep(ms) {
                     return new Promise(resolve => setTimeout(resolve, ms));
                 }
                 
-                // Confetti spécial pour les alumni
                 function createAlumniConfetti() {
-                    const colors = ['#fbbf24', '#f59e0b', '#d97706', '#92400e']; // Couleurs dorées
-                    const confettiCount = 75; // Plus de confetti pour les alumni
+                    const colors = ['#fbbf24', '#f59e0b', '#d97706', '#92400e'];
+                    const confettiCount = 75;
                     
                     for (let i = 0; i < confettiCount; i++) {
                         const confetti = document.createElement('div');
@@ -1094,7 +1024,7 @@
                         
                         document.body.appendChild(confetti);
                         
-                        const duration = Math.random() * 4 + 3; // Plus long pour les alumni
+                        const duration = Math.random() * 4 + 3;
                         const rotation = Math.random() * 360;
                         const xMovement = (Math.random() - 0.5) * 300;
                         

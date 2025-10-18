@@ -186,7 +186,7 @@ const registrationForm = document.getElementById('registrationForm');
 const successModal = document.getElementById('successModal');
 
         // ⚠️ IMPORTANT : URL Apps Script mise à jour
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx2EOI6LM1r5oJYFdqRvHd-Sf4YgIHULfE0uc_45OOD4IPIRFgZ9k10HWDhvwXSi-bP/exec';
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx9RFhp_OrZfXxgxq7wn79EE8PbU4bhxKcyEp8s8nlkHYBCnTEEoX68KQGAPg5QTHmD/exec';
 
 if (registrationForm) {
     registrationForm.addEventListener('submit', async (e) => {
@@ -260,6 +260,7 @@ if (registrationForm) {
                 photoName: photoName,  // Nom du fichier
                 finalComments: document.getElementById('finalComments')?.value || '',
                 singleRoom: document.querySelector('input[name="singleRoom"]:checked')?.value || '',
+                busTransport: document.querySelector('input[name="busTransport"]:checked')?.value || '',
                 signatureData: signatureData,  // Signature digitale
                 terms: document.getElementById('terms').checked,
                 formType: 'regular',
