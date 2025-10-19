@@ -212,15 +212,44 @@
 
                     <div class="form-group">
                         <label for="aiesecPosition">AIESEC Position <span class="required">*</span></label>
-                        <input 
-                            type="text" 
+                        <select 
                             id="aiesecPosition" 
                             name="aiesecPosition" 
-                            placeholder="Enter your position (e.g., VP, TL, Member)" 
                             required
                         >
+                            <option value="">Select your position</option>
+                            <option value="LCP">LCP → Local Committee President</option>
+                            <option value="LCVP">LCVP → Local Committee Vice President</option>
+                            <option value="MM">MM → Middle Manager</option>
+                            <option value="TL">TL → Team Leader</option>
+                            <option value="TM_newbie">TM → Team Member (newbie)</option>
+                            <option value="TM_oldie">TM → Team Member (oldie)</option>
+                        </select>
                         <span class="form-icon">🎭</span>
                     </div>
+
+                    <div class="form-group" id="departmentGroup" style="display: none;">
+                        <label for="aiesecDepartment">Department <span class="required">*</span></label>
+                        <select 
+                            id="aiesecDepartment" 
+                            name="aiesecDepartment"
+                        >
+                            <option value="">Select your department</option>
+                            <option value="OGV">OGV</option>
+                            <option value="OGT">OGT</option>
+                            <option value="IGT">IGT</option>
+                            <option value="IGV">IGV</option>
+                            <option value="TM">TM</option>
+                            <option value="MKT">MKT</option>
+                            <option value="F&L">F&L</option>
+                            <option value="BD">BD</option>
+                            <option value="PM&EWA&IM">PM&EWA&IM</option>
+                        </select>
+                        <span class="form-icon">🏢</span>
+                    </div>
+                    
+                    <!-- Hidden field to store the combined position + department value -->
+                    <input type="hidden" id="aiesecPositionCombined" name="aiesecPositionCombined" value="">
 
                     <div class="form-group">
                         <label for="cin">Numéro CIN <span class="required">*</span></label>
@@ -695,6 +724,57 @@
     <script>
         // Conditional Fields Functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Handle AIESEC Position and Department fields
+            const aiesecPositionSelect = document.getElementById('aiesecPosition');
+            const departmentGroup = document.getElementById('departmentGroup');
+            const aiesecDepartmentSelect = document.getElementById('aiesecDepartment');
+            
+            if (aiesecPositionSelect && departmentGroup && aiesecDepartmentSelect) {
+                const aiesecPositionCombined = document.getElementById('aiesecPositionCombined');
+                
+                // Function to update the combined position value
+                function updateCombinedPosition() {
+                    const position = aiesecPositionSelect.value;
+                    const department = aiesecDepartmentSelect.value;
+                    
+                    if (position === 'LCP') {
+                        // LCP doesn't need department
+                        aiesecPositionCombined.value = 'LCP';
+                    } else if (position && department) {
+                        // Combine position and department
+                        aiesecPositionCombined.value = `${position} - ${department}`;
+                    } else {
+                        aiesecPositionCombined.value = '';
+                    }
+                }
+                
+                aiesecPositionSelect.addEventListener('change', function() {
+                    if (this.value === 'LCP') {
+                        // LCP doesn't need department selection
+                        departmentGroup.style.display = 'none';
+                        aiesecDepartmentSelect.removeAttribute('required');
+                        aiesecDepartmentSelect.value = '';
+                        updateCombinedPosition();
+                    } else if (this.value === 'LCVP' || this.value === 'MM' || this.value === 'TL' || this.value === 'TM_newbie' || this.value === 'TM_oldie') {
+                        // Other positions need department selection
+                        departmentGroup.style.display = 'block';
+                        aiesecDepartmentSelect.setAttribute('required', 'required');
+                        updateCombinedPosition();
+                    } else {
+                        // No position selected
+                        departmentGroup.style.display = 'none';
+                        aiesecDepartmentSelect.removeAttribute('required');
+                        aiesecDepartmentSelect.value = '';
+                        updateCombinedPosition();
+                    }
+                });
+                
+                // Also update when department changes
+                aiesecDepartmentSelect.addEventListener('change', function() {
+                    updateCombinedPosition();
+                });
+            }
+            
             // Handle gender "other" field
             const genderRadios = document.querySelectorAll('input[name="gender"]');
             const genderOtherField = document.getElementById('genderOtherField');

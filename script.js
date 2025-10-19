@@ -233,12 +233,31 @@ if (registrationForm) {
                 window.regularSaveSignature();
             }
             
+            // Mettre à jour la position combinée avant soumission
+            const aiesecPositionSelect = document.getElementById('aiesecPosition');
+            const aiesecDepartmentSelect = document.getElementById('aiesecDepartment');
+            const aiesecPositionCombined = document.getElementById('aiesecPositionCombined');
+            
+            if (aiesecPositionSelect && aiesecPositionCombined) {
+                const position = aiesecPositionSelect.value;
+                const department = aiesecDepartmentSelect?.value || '';
+                
+                if (position === 'LCP') {
+                    aiesecPositionCombined.value = 'LCP';
+                } else if (position && department) {
+                    aiesecPositionCombined.value = `${position} - ${department}`;
+                } else {
+                    aiesecPositionCombined.value = position;
+                }
+            }
+            
             const signatureData = document.getElementById('signatureData')?.value || '';
             
             // Récupérer toutes les valeurs du formulaire
             const formData = {
                 fullName: document.getElementById('fullName').value,
-                aiesecPosition: document.getElementById('aiesecPosition').value,
+                aiesecPosition: document.getElementById('aiesecPositionCombined').value || document.getElementById('aiesecPosition').value,
+                aiesecDepartment: document.getElementById('aiesecDepartment')?.value || '',
                 cin: document.getElementById('cin').value,
                 university: document.getElementById('university').value,
                 email: document.getElementById('email').value,
