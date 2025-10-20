@@ -24,6 +24,24 @@
     <meta name="twitter:title" content="Register - Enter the Wonderland | CNN 2K25">
     <meta name="twitter:description" content="Join us for CNN 2K25 - Register now for an extraordinary Alice in Wonderland themed conference experience with AIESEC Carthage.">
     <meta name="twitter:image" content="https://res.cloudinary.com/dfgycmek8/image/upload/v1760275475/favicone_cnn_x9paeu.jpg">
+    <script>
+        // Registration gate: redirect to closed page if registration is closed
+        (function() {
+            var statusUrl = 'assets/registration-status.json';
+            try {
+                fetch(statusUrl, { cache: 'no-store' })
+                    .then(function(res) { return res.ok ? res.json() : { open: true }; })
+                    .then(function(data) {
+                        if (data && data.open === false) {
+                            if (!location.pathname.endsWith('register-closed.html')) {
+                                location.replace('register-closed.html');
+                            }
+                        }
+                    })
+                    .catch(function() { /* fail open */ });
+            } catch (e) { /* fail open */ }
+        })();
+    </script>
 </head>
 <body>
     <!-- Navigation -->
