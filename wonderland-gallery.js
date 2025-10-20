@@ -282,8 +282,6 @@ async function loadWonderlandData() {
         // Tester les URLs des photos
         testPhotoUrls(data.participants || []);
         
-        // Afficher les statistiques
-        displayStats(data.participants || []);
         
         // Afficher les participants
         displayWonderlandRealms(participantsByCharacter);
@@ -351,60 +349,6 @@ function organizeByCharacter(participants) {
     return organized;
 }
 
-// Afficher les statistiques
-function displayStats(participants) {
-    console.log('Displaying stats for participants:', participants);
-    
-    const totalCount = participants.length;
-    
-    // Normaliser les propriétés pour le comptage
-    const alumniCount = participants.filter(p => {
-        return p.isalumni === true || 
-               p.isAlumni === true || 
-               p.formtype === 'alumni' || 
-               p.formType === 'alumni';
-    }).length;
-    
-    const regularCount = totalCount - alumniCount;
-    
-    const charactersCount = new Set(participants.map(p => {
-        return p.wonderlandcharacter || 
-               p.wonderlandCharacter || 
-               p.alumnicharacter || 
-               p.alumniCharacter;
-    }).filter(Boolean)).size;
-    
-    console.log('Stats:', { totalCount, alumniCount, regularCount, charactersCount });
-    
-    // Animation des chiffres
-    animateCounter('totalCount', totalCount);
-    animateCounter('charactersCount', charactersCount);
-    
-    // Mettre à jour les statistiques alumni si les éléments existent
-    const alumniCountEl = document.getElementById('alumniCount');
-    const regularCountEl = document.getElementById('regularCount');
-    
-    if (alumniCountEl) animateCounter('alumniCount', alumniCount);
-    if (regularCountEl) animateCounter('regularCount', regularCount);
-}
-
-// Animer un compteur
-function animateCounter(elementId, target) {
-    const element = document.getElementById(elementId);
-    let current = 0;
-    const duration = 2000; // 2 secondes
-    const increment = target / (duration / 16); // 60 FPS
-    
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current);
-        }
-    }, 16);
-}
 
 // Afficher les royaumes Wonderland
 function displayWonderlandRealms(participantsByCharacter) {

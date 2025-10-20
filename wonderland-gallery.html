@@ -537,39 +537,6 @@
             font-style: italic;
         }
 
-        /* Stats Counter */
-        .wonderland-stats {
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .stats-container {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #fbbf24;
-            font-family: 'Cinzel', serif;
-            text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: #cbd5e1;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
 
         /* Enhanced Magical Particles */
         .magic-particle {
@@ -629,39 +596,12 @@
             }
         }
 
-        /* Enhanced Stats with Glow */
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #fbbf24;
-            font-family: 'Cinzel', serif;
-            text-shadow: 
-                0 0 20px rgba(251, 191, 36, 0.5),
-                0 2px 4px rgba(0, 0, 0, 0.3);
-            animation: statPulse 3s ease-in-out infinite;
-        }
-
-        @keyframes statPulse {
-            0%, 100% { 
-                transform: scale(1);
-                text-shadow: 
-                    0 0 20px rgba(251, 191, 36, 0.5),
-                    0 2px 4px rgba(0, 0, 0, 0.3);
-            }
-            50% { 
-                transform: scale(1.05);
-                text-shadow: 
-                    0 0 30px rgba(251, 191, 36, 0.8),
-                    0 4px 8px rgba(0, 0, 0, 0.4);
-            }
-        }
 
         /* Enhanced Mobile Responsive Design */
         @media (max-width: 768px) {
             /* Force visibility for all elements */
             .wonderland-world,
             .gallery-header,
-            .wonderland-stats,
             .character-realm,
             .alumni-realm,
             .wonderland-grid,
@@ -699,33 +639,7 @@
                 opacity: 1 !important;
             }
             
-            .wonderland-stats {
-                margin-bottom: 2rem !important;
-                display: block !important;
-            }
             
-            .stats-container {
-                gap: 2rem !important;
-                display: flex !important;
-                justify-content: center !important;
-                flex-wrap: wrap !important;
-            }
-            
-            .stat-item {
-                display: block !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-            }
-            
-            .stat-number {
-                font-size: 2rem !important;
-                display: block !important;
-            }
-            
-            .stat-label {
-                font-size: 0.8rem !important;
-                display: block !important;
-            }
             
             .character-realm {
                 margin-bottom: 3rem !important;
@@ -939,13 +853,6 @@
                 font-size: 1rem;
             }
             
-            .stats-container {
-                gap: 1.5rem;
-            }
-            
-            .stat-number {
-                font-size: 1.8rem;
-            }
             
             .character-realm, .alumni-realm {
                 margin-bottom: 2rem;
@@ -1102,19 +1009,6 @@
                 <p class="gallery-subtitle">"We're all mad here, but together we create magic"</p>
             </div>
 
-            <!-- Stats -->
-            <div class="wonderland-stats" id="wonderlandStats" style="display: none;">
-                <div class="stats-container">
-                    <div class="stat-item">
-                        <div class="stat-number" id="totalCount">0</div>
-                        <div class="stat-label">Wonderlanders</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="charactersCount">0</div>
-                        <div class="stat-label">Characters</div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Loading State -->
             <div class="loading-wonderland" id="loadingState">
