@@ -1066,6 +1066,32 @@
     </script>
 
     <style>
+        /* FIXED: Global mobile counter hiding - ensure wonderlanders counter is hidden on all mobile devices */
+        @media (max-width: 768px) {
+            .wonderland-stats,
+            #wonderlandStats,
+            .stats-container,
+            .stat-item,
+            .stat-number,
+            #totalCount,
+            #charactersCount,
+            .stat-label {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                height: 0 !important;
+                width: 0 !important;
+                overflow: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                position: absolute !important;
+                left: -9999px !important;
+                top: -9999px !important;
+                font-size: 0 !important;
+                line-height: 0 !important;
+            }
+        }
+        
         /* FORCER L'AFFICHAGE DU FORMULAIRE */
         .form-container {
             opacity: 1 !important;
@@ -1324,10 +1350,18 @@
             .stat-item,
             #totalCount,
             #charactersCount,
-            .stat-number {
+            .stat-number,
+            .wonderland-stats,
+            #wonderlandStats,
+            .stats-container {
                 display: none !important;
                 visibility: hidden !important;
                 opacity: 0 !important;
+                height: 0 !important;
+                width: 0 !important;
+                overflow: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
             }
         }
 
@@ -1385,6 +1419,30 @@
 
         .form-info-box strong {
             color: #fbbf24;
+        }
+
+        /* FIXED: Hide wonderlanders counter on all mobile devices */
+        @media (max-width: 768px) {
+            .wonderland-stats,
+            #wonderlandStats,
+            .stats-container,
+            .stat-item,
+            .stat-number,
+            #totalCount,
+            #charactersCount,
+            .stat-label {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                height: 0 !important;
+                width: 0 !important;
+                overflow: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                position: absolute !important;
+                left: -9999px !important;
+                top: -9999px !important;
+            }
         }
 
         /* PERFECT MOBILE FORM LAYOUT */
@@ -1692,6 +1750,57 @@
                 height: 8px !important;
                 background: #1e293b !important;
                 border-radius: 50% !important;
+            }
+        }
+        
+        /* FIXED: Additional mobile breakpoints to ensure counter is hidden */
+        @media (max-width: 480px) {
+            .wonderland-stats,
+            #wonderlandStats,
+            .stats-container,
+            .stat-item,
+            .stat-number,
+            #totalCount,
+            #charactersCount,
+            .stat-label {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                height: 0 !important;
+                width: 0 !important;
+                overflow: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                position: absolute !important;
+                left: -9999px !important;
+                top: -9999px !important;
+                font-size: 0 !important;
+                line-height: 0 !important;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .wonderland-stats,
+            #wonderlandStats,
+            .stats-container,
+            .stat-item,
+            .stat-number,
+            #totalCount,
+            #charactersCount,
+            .stat-label {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                height: 0 !important;
+                width: 0 !important;
+                overflow: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                position: absolute !important;
+                left: -9999px !important;
+                top: -9999px !important;
+                font-size: 0 !important;
+                line-height: 0 !important;
             }
         }
     </style>
