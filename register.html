@@ -25,125 +25,18 @@
     <meta name="twitter:description" content="Join us for CNN 2K25 - Register now for an extraordinary Alice in Wonderland themed conference experience with AIESEC Carthage.">
     <meta name="twitter:image" content="https://res.cloudinary.com/dfgycmek8/image/upload/v1760275475/favicone_cnn_x9paeu.jpg">
     <script>
-        // Registration gate: redirect to closed page if registration is closed
-        // Execute immediately, before any other scripts
-        (function() {
-            // Multiple fallback methods for Vercel compatibility
-            function redirectToClosed() {
-                console.log('Redirecting to closed page...');
-                window.location.href = 'register-closed.html';
-            }
-            
-            // Method 1: Direct fetch with multiple fallbacks
-            fetch('assets/registration-status.json', { 
-                cache: 'no-cache',
-                headers: {
-                    'Cache-Control': 'no-cache',
-                    'Pragma': 'no-cache'
-                }
-            })
-            .then(function(response) {
-                if (!response.ok) {
-                    throw new Error('Response not ok: ' + response.status);
-                }
-                return response.json();
-            })
-            .then(function(data) {
-                console.log('Registration status received:', data);
-                if (data && data.open === false) {
-                    redirectToClosed();
-                }
-            })
-            .catch(function(error) {
-                console.error('Fetch error:', error);
-                // Fallback: try XMLHttpRequest
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', 'assets/registration-status.json', true);
-                xhr.setRequestHeader('Cache-Control', 'no-cache');
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === 4) {
-                        if (xhr.status === 200) {
-                            try {
-                                var data = JSON.parse(xhr.responseText);
-                                if (data && data.open === false) {
-                                    redirectToClosed();
-                                }
-                            } catch (e) {
-                                console.error('JSON parse error:', e);
-                                redirectToClosed(); // Assume closed on error
-                            }
-                        } else {
-                            redirectToClosed(); // Assume closed on error
-                        }
-                    }
-                };
-                xhr.send();
-            });
-        })();
+        // Force redirect to closed page - registration is currently closed
+        window.location.href = 'register-closed.html';
     </script>
 </head>
 <body>
-    <!-- Emergency redirect check - runs immediately when body loads -->
+    <!-- Force redirect - registration is closed -->
     <script>
-        // Emergency check with Vercel-optimized approach
-        (function() {
-            // Hide body content immediately
-            document.body.style.display = 'none';
-            
-            function showClosedPage() {
-                document.body.innerHTML = '<div style="text-align:center;padding:50px;font-family:Arial;background:#1e293b;color:#fbbf24;min-height:100vh;display:flex;align-items:center;justify-content:center;"><div><h1>Registration Closed</h1><p>Redirecting...</p></div></div>';
-                document.body.style.display = 'block';
-                setTimeout(function() {
-                    window.location.href = 'register-closed.html';
-                }, 1000);
-            }
-            
-            // Try multiple methods to check status
-            var attempts = 0;
-            var maxAttempts = 3;
-            
-            function checkStatus() {
-                attempts++;
-                console.log('Attempt', attempts, 'to check registration status');
-                
-                // Method 1: Fetch with timestamp to bypass cache
-                fetch('assets/registration-status.json?t=' + Date.now(), { 
-                    cache: 'no-cache',
-                    headers: {
-                        'Cache-Control': 'no-cache, no-store, must-revalidate',
-                        'Pragma': 'no-cache',
-                        'Expires': '0'
-                    }
-                })
-                .then(function(res) { 
-                    if (!res.ok) throw new Error('Response not ok');
-                    return res.json(); 
-                })
-                .then(function(data) {
-                    console.log('Status check result:', data);
-                    if (data && data.open === false) {
-                        showClosedPage();
-                    } else {
-                        // Registration is open, show the page
-                        document.body.style.display = 'block';
-                    }
-                })
-                .catch(function(error) {
-                    console.error('Fetch attempt', attempts, 'failed:', error);
-                    if (attempts < maxAttempts) {
-                        // Retry after a short delay
-                        setTimeout(checkStatus, 500);
-                    } else {
-                        // After max attempts, assume closed for safety
-                        console.log('Max attempts reached, assuming registration is closed');
-                        showClosedPage();
-                    }
-                });
-            }
-            
-            // Start checking immediately
-            checkStatus();
-        })();
+        // Immediate redirect to closed page
+        document.body.innerHTML = '<div style="text-align:center;padding:50px;font-family:Arial;background:#1e293b;color:#fbbf24;min-height:100vh;display:flex;align-items:center;justify-content:center;"><div><h1>Registration Closed</h1><p>Redirecting...</p></div></div>';
+        setTimeout(function() {
+            window.location.href = 'register-closed.html';
+        }, 1000);
     </script>
     
     <!-- Navigation -->
