@@ -33,13 +33,22 @@
                     .then(function(res) { return res.ok ? res.json() : { open: true }; })
                     .then(function(data) {
                         if (data && data.open === false) {
-                            if (!location.pathname.endsWith('register-closed.html')) {
-                                location.replace('register-closed.html');
-                            }
+                            // Force immediate redirect to closed page
+                            window.location.href = 'register-closed.html';
                         }
                     })
-                    .catch(function() { /* fail open */ });
-            } catch (e) { /* fail open */ }
+                    .catch(function() { 
+                        // If fetch fails, check if we're already on closed page
+                        if (!location.pathname.endsWith('register-closed.html')) {
+                            window.location.href = 'register-closed.html';
+                        }
+                    });
+            } catch (e) { 
+                // If any error occurs, redirect to closed page
+                if (!location.pathname.endsWith('register-closed.html')) {
+                    window.location.href = 'register-closed.html';
+                }
+            }
         })();
     </script>
 </head>
