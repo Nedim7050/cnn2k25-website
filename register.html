@@ -26,33 +26,61 @@
     <meta name="twitter:image" content="https://res.cloudinary.com/dfgycmek8/image/upload/v1760275475/favicone_cnn_x9paeu.jpg">
     <script>
         // Registration gate: redirect to closed page if registration is closed
+        // Execute immediately, before any other scripts
         (function() {
-            var statusUrl = 'assets/registration-status.json';
-            try {
-                fetch(statusUrl, { cache: 'no-store' })
-                    .then(function(res) { return res.ok ? res.json() : { open: true }; })
-                    .then(function(data) {
-                        if (data && data.open === false) {
-                            // Force immediate redirect to closed page
-                            window.location.href = 'register-closed.html';
-                        }
-                    })
-                    .catch(function() { 
-                        // If fetch fails, check if we're already on closed page
-                        if (!location.pathname.endsWith('register-closed.html')) {
-                            window.location.href = 'register-closed.html';
-                        }
-                    });
-            } catch (e) { 
-                // If any error occurs, redirect to closed page
-                if (!location.pathname.endsWith('register-closed.html')) {
-                    window.location.href = 'register-closed.html';
+            // Check registration status immediately
+            fetch('assets/registration-status.json', { 
+                cache: 'no-store',
+                method: 'GET'
+            })
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
                 }
-            }
+                return response.json();
+            })
+            .then(function(data) {
+                console.log('Registration status:', data);
+                if (data && data.open === false) {
+                    console.log('Registration is closed, redirecting...');
+                    // Force immediate redirect
+                    window.location.replace('register-closed.html');
+                }
+            })
+            .catch(function(error) {
+                console.error('Error checking registration status:', error);
+                // If we can't check status, assume closed for safety
+                window.location.replace('register-closed.html');
+            });
         })();
     </script>
 </head>
 <body>
+    <!-- Emergency redirect check - runs immediately when body loads -->
+    <script>
+        // Emergency check - if registration is closed, redirect immediately
+        (function() {
+            try {
+                fetch('assets/registration-status.json', { cache: 'no-store' })
+                    .then(function(res) { return res.ok ? res.json() : { open: false }; })
+                    .then(function(data) {
+                        if (data && data.open === false) {
+                            // Stop page loading and redirect
+                            document.body.innerHTML = '<div style="text-align:center;padding:50px;font-family:Arial;">Redirecting...</div>';
+                            window.location.replace('register-closed.html');
+                        }
+                    })
+                    .catch(function() {
+                        // If fetch fails, redirect to closed page
+                        window.location.replace('register-closed.html');
+                    });
+            } catch (e) {
+                // If any error, redirect to closed page
+                window.location.replace('register-closed.html');
+            }
+        })();
+    </script>
+    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
