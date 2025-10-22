@@ -25,19 +25,20 @@
     <meta name="twitter:description" content="Join us for CNN 2K25 - Register now for an extraordinary Alice in Wonderland themed conference experience with AIESEC Carthage.">
     <meta name="twitter:image" content="https://res.cloudinary.com/dfgycmek8/image/upload/v1760275475/favicone_cnn_x9paeu.jpg">
     <script>
-        // Force redirect to closed page - registration is currently closed
-        window.location.href = 'register-closed.html';
+        // Registration gate: redirect to closed page if registration is closed
+        (function() {
+            fetch('assets/registration-status.json', { cache: 'no-store' })
+                .then(function(res) { return res.ok ? res.json() : { open: true }; })
+                .then(function(data) {
+                    if (data && data.open === false) {
+                        window.location.href = 'register-closed.html';
+                    }
+                })
+                .catch(function() { /* fail open - allow registration */ });
+        })();
     </script>
 </head>
 <body>
-    <!-- Force redirect - registration is closed -->
-    <script>
-        // Immediate redirect to closed page
-        document.body.innerHTML = '<div style="text-align:center;padding:50px;font-family:Arial;background:#1e293b;color:#fbbf24;min-height:100vh;display:flex;align-items:center;justify-content:center;"><div><h1>Registration Closed</h1><p>Redirecting...</p></div></div>';
-        setTimeout(function() {
-            window.location.href = 'register-closed.html';
-        }, 1000);
-    </script>
     
     <!-- Navigation -->
     <nav class="navbar">
